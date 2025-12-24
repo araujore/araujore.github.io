@@ -1,76 +1,222 @@
-# Writing Portfolio Website
+# Renan Araujo - Writing Portfolio Website
 
-A clean, typography-focused blog inspired by borretti.me. Built with pure HTML and CSS—no frameworks, no build process, no dependencies.
+A clean, typography-focused personal website built with Lusitana font and minimal design. Features include article pages with table of contents, references sidebar, and RSS feed support.
 
 ## Files Included
 
-- `index.html` - Homepage with recent posts
-- `post.html` - Example individual post page
+- `index.html` - Homepage with introduction and recent posts
+- `article-template.html` - Article template with TOC, references sidebar, and social footer
+- `publications.html` - Portfolio-style grid for publications with covers
+- `articles.html` - Blog listing page
 - `about.html` - About page
-
-## How to Use
-
-1. **Customize the content**: Open each HTML file and replace placeholder text with your own:
-   - Your name
-   - Your bio and interests
-   - Your actual blog posts
-   - Contact links (email, Twitter, GitHub, etc.)
-
-2. **Host it**: Upload these files to any web host:
-   - GitHub Pages (free)
-   - Netlify (free)
-   - Vercel (free)
-   - Your own server
-
-3. **Add more posts**: 
-   - Duplicate `post.html`
-   - Update the title, date, and content
-   - Add a link to it from `index.html`
+- `contact.html` - Contact page
+- `feed.xml` - RSS feed for blog subscribers
 
 ## Design Features
 
-- **Clean typography**: Uses Crimson Pro (serif) and IBM Plex Mono
-- **Minimal, readable layout**: Max-width content, generous line height
-- **Subtle animations**: Fade-in effects on page load
-- **Responsive**: Works on mobile and desktop
-- **Fast**: No JavaScript, no external dependencies beyond fonts
+### Typography & Headings
+- **Font**: Lusitana from Google Fonts
+- **Body text**: 11pt, #21232C
+- **H1**: 20pt, bold, #A47663 (accent color)
+- **H2**: 16pt, bold, #21232C
+- **H3**: 14pt, italic, #21232C
+- **Links**: #A47663, underlined (except in navigation)
+- **Background**: Pure white (#FFFFFF)
 
-## Customization Tips
+### Article Layout
+- Three-column layout: Table of Contents (left) | Article (center, ~650px wide) | References (right)
+- Sticky TOC and references sidebars
+- Social footer with LinkedIn and Twitter icons
+- Responsive design collapses to single column on mobile
 
-### Colors
-Edit the CSS variables at the top of any file:
+## How to Post New Articles
+
+### Step 1: Create the Article File
+1. Duplicate `article-template.html`
+2. Rename it (e.g., `my-new-article.html`)
+3. Update the content:
+   - Change `<title>` tag
+   - Update `<h1>` heading
+   - Update the date in meta section
+   - Replace article content
+   - Update Table of Contents links to match your H2 headings
+   - Add your references in the right sidebar
+
+### Step 2: Update the Table of Contents
+In your new article, update the TOC to match your H2 headings:
+
+```html
+<aside class="toc-sidebar">
+    <h4>Contents</h4>
+    <ul>
+        <li><a href="#section1">Your First H2 Heading</a></li>
+        <li><a href="#section2">Your Second H2 Heading</a></li>
+    </ul>
+</aside>
+```
+
+Make sure to add matching `id` attributes to your H2 tags:
+```html
+<h2 id="section1">Your First H2 Heading</h2>
+```
+
+### Step 3: Add to Article Listing
+Update `articles.html` and `index.html` to include your new post:
+
+```html
+<article>
+    <h3><a href="/your-new-article.html">Your Article Title</a></h3>
+    <div class="meta">
+        <span>2025-01-15</span>
+        <span>•</span>
+        <span>7 min read</span>
+    </div>
+    <p class="excerpt">
+        Your article excerpt here...
+    </p>
+    <a href="/your-new-article.html" class="read-more">Read more</a>
+</article>
+```
+
+### Step 4: Update RSS Feed
+Edit `feed.xml` and add a new item at the top:
+
+```xml
+<item>
+    <title>Your Article Title</title>
+    <link>https://yourdomain.com/your-new-article.html</link>
+    <description>Your article excerpt...</description>
+    <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+    <guid>https://yourdomain.com/your-new-article.html</guid>
+</item>
+```
+
+### Step 5: Upload
+Upload the new/updated files to your hosting:
+- New article HTML file
+- Updated `articles.html`
+- Updated `index.html` (if showing on homepage)
+- Updated `feed.xml`
+
+## RSS Feed & Subscriptions
+
+### What is RSS?
+RSS is a web feed that allows readers to access updates to your blog in a standardized format. Readers use RSS reader apps (like Feedly, Inoreader, NetNewsWire) to subscribe to your feed.
+
+### How to Enable RSS on Your Site
+
+**Your RSS feed is already created** (`feed.xml`). Here's how to make it discoverable:
+
+1. **Link to it in your navigation**
+   - Add "Subscribe" or "RSS" link to your site nav
+   - Link to: `https://yourdomain.com/feed.xml`
+
+2. **Add auto-discovery tag** (optional but recommended)
+   Add this to the `<head>` of each page:
+   ```html
+   <link rel="alternate" type="application/rss+xml" title="Renan Araujo" href="/feed.xml">
+   ```
+
+### Email Subscriptions (Alternative to RSS)
+
+RSS works well for technical audiences, but for broader reach, consider email subscriptions:
+
+**Free Options:**
+1. **Buttondown** (buttondown.email) - Free for up to 100 subscribers, then $9/month
+2. **Substack** (substack.com) - Free, takes 10% of paid subscriptions
+3. **Mailchimp** - Free up to 500 subscribers
+
+**How it works:**
+- Add a signup form to your site
+- When you publish a new article, send it via email
+- More reader-friendly than RSS for non-technical audiences
+
+**Recommended:** Start with RSS (already built!), add email later if you want broader reach.
+
+## Customizing the Design
+
+### Change Colors
+Edit CSS variables in any HTML file:
 ```css
 :root {
-    --bg: #fdfdf8;        /* Background */
-    --text: #1a1a1a;      /* Main text */
-    --text-light: #666;   /* Metadata, footer */
-    --accent: #2a5a8a;    /* Links, accents */
+    --bg: #FFFFFF;
+    --text: #21232C;
+    --text-light: #666;
+    --accent: #A47663;
 }
 ```
 
-### Fonts
-Current fonts:
-- Headings and body: Crimson Pro (serif)
-- Code and metadata: IBM Plex Mono
+### Adjust Article Width
+In `article-template.html`, find:
+```css
+.main-content {
+    max-width: 650px;
+}
+```
+Change `650px` to your preferred width.
 
-To change fonts, update the Google Fonts link in the `<head>` and the CSS variables.
+### Modify Heading Styles
+Find and edit these sections in the CSS:
+```css
+h1 { font-size: 20pt; font-weight: 700; color: var(--accent); }
+h2 { font-size: 16pt; font-weight: 700; color: var(--text); }
+h3 { font-size: 14pt; font-weight: 400; font-style: italic; }
+```
 
-### Layout
-The main content width is set to `680px`. Adjust in the `.container` class to make it wider or narrower.
+## File Structure
 
-## Adding an RSS Feed
+```
+your-site/
+├── index.html                 # Homepage
+├── about.html                 # About page
+├── publications.html          # Publications grid
+├── articles.html             # Articles listing
+├── contact.html              # Contact page
+├── article-template.html     # Use this as template for new articles
+├── feed.xml                  # RSS feed
+└── [your-article-files].html # Your published articles
+```
 
-To enable RSS (so people can subscribe), you'll need to create a `feed.xml` file. This requires some manual work or a static site generator like Jekyll or Hugo if you want it automated.
+## Hosting Options
 
-## Next Steps
+### GitHub Pages (Recommended for simplicity)
+1. Create repository: `yourusername.github.io`
+2. Upload all HTML/XML files
+3. Site will be live at `https://yourusername.github.io`
+4. Free, easy updates via git
 
-Consider adding:
-- An archive page showing all posts
-- Tags or categories
-- A search function (requires JavaScript)
-- Comments (via Disqus, Utterances, etc.)
-- Analytics (if desired)
+### Netlify (Recommended for custom domains)
+1. Drag and drop your folder to netlify.com
+2. Get instant URL or connect custom domain
+3. Free tier includes HTTPS and custom domains
+
+### Custom Domain
+If you have a domain (like `araujorenan.com`):
+- Point it to your GitHub Pages or Netlify site
+- Both services have guides for custom domains
+
+## Quick Start Checklist
+
+- [ ] Replace all "Your Name" with your actual info
+- [ ] Update social links (LinkedIn, Twitter) in all files
+- [ ] Update `feed.xml` with your domain
+- [ ] Write your first real article using the template
+- [ ] Add your publications with cover images
+- [ ] Test all links work
+- [ ] Upload to hosting
+- [ ] Share the URL!
+
+## Questions?
+
+**Q: How do I add images to articles?**
+A: Upload images to your hosting, then use: `<img src="/images/photo.jpg" alt="Description">`
+
+**Q: Can I add more sections to the navigation?**
+A: Yes! Just add another link in the `<nav>` section of each page.
+
+**Q: How do I change the social icons in the footer?**
+A: Edit the `<svg>` elements or find new icons at sites like heroicons.com
 
 ## License
 
-This template is free to use however you'd like. No attribution required.
+Free to use however you like. No attribution required.

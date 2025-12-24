@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building in Public - Renan Araujo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFFFF;
+            --text: #21232C;
+            --text-light: #666;
+            --border: #e0e0e0;
+            --accent: #A47663;
+            --font-main: 'Lusitana', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            font-size: 11pt;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .site-nav {
+            text-align: center;
+            padding: 40px 24px 20px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+        }
+
+        .site-nav h1 {
+            font-size: 20pt;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .site-nav h1 a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .site-nav nav {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .site-nav nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 11pt;
+            transition: color 0.2s ease;
+        }
+
+        .site-nav nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Three column layout */
+        .page-wrapper {
+            display: grid;
+            grid-template-columns: 200px 1fr 250px;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Left sidebar - Table of Contents */
+        .toc-sidebar {
+            position: sticky;
+            top: 140px;
+            align-self: start;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .toc-sidebar h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .toc-sidebar ul {
+            list-style: none;
+        }
+
+        .toc-sidebar li {
+            margin-bottom: 8px;
+        }
+
+        .toc-sidebar a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 10pt;
+            line-height: 1.4;
+            transition: color 0.2s ease;
+        }
+
+        .toc-sidebar a:hover {
+            color: var(--accent);
+        }
+
+        /* Main content */
+        .main-content {
+            max-width: 650px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.2s forwards;
+        }
+
+        .article-header {
+            margin-bottom: 48px;
+        }
+
+        h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .meta {
+            display: flex;
+            gap: 12px;
+            font-size: 10pt;
+            color: var(--text-light);
+        }
+
+        article p {
+            margin-bottom: 20px;
+        }
+
+        article h2 {
+            font-size: 16pt;
+            font-weight: 700;
+            color: var(--text);
+            margin: 40px 0 16px;
+            letter-spacing: -0.02em;
+        }
+
+        article h3 {
+            font-size: 14pt;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text);
+            margin: 32px 0 12px;
+        }
+
+        article a {
+            color: var(--accent);
+            text-decoration: underline;
+            transition: opacity 0.2s ease;
+        }
+
+        article a:hover {
+            opacity: 0.7;
+        }
+
+        article blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+            margin: 28px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        /* Right sidebar - References */
+        .references-sidebar {
+            position: sticky;
+            top: 140px;
+            align-self: start;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.3s forwards;
+        }
+
+        .references-sidebar h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .reference-item {
+            margin-bottom: 20px;
+            font-size: 9pt;
+            line-height: 1.5;
+        }
+
+        .reference-number {
+            color: var(--accent);
+            font-weight: 700;
+            margin-right: 4px;
+        }
+
+        .reference-item a {
+            color: var(--accent);
+            text-decoration: underline;
+            word-break: break-word;
+        }
+
+        /* Footer with social icons */
+        .article-footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: var(--text);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.7;
+        }
+
+        .social-icons svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .footer-text {
+            font-size: 10pt;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .footer-text a {
+            color: var(--text);
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .page-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .toc-sidebar,
+            .references-sidebar {
+                position: static;
+            }
+
+            .main-content {
+                max-width: 680px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-nav {
+                padding: 30px 20px 15px;
+            }
+
+            .page-wrapper {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 18pt;
+            }
+
+            article h2 {
+                font-size: 14pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="site-nav">
+        <h1><a href="/">Renan Araujo</a></h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/publications.html">Publications</a>
+            <a href="/articles.html">Articles</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <div class="page-wrapper">
+        <!-- Left Sidebar: Table of Contents -->
+        <aside class="toc-sidebar">
+            <h4>Contents</h4>
+            <ul>
+                <li><a href="#perfectionism">The Perfectionism Trap</a></li>
+                <li><a href="#learning">Learning in Public</a></li>
+                <li><a href="#work">The Work That Matters</a></li>
+                <li><a href="#final">Final Thoughts</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="article-header">
+                <h1>Building in Public</h1>
+                <div class="meta">
+                    <span>December 20, 2024</span>
+                    <span>•</span>
+                    <span>5 min read</span>
+                </div>
+            </header>
+
+            <article>
+                <p>
+                    There's something paradoxical about sharing unfinished work. We're taught to polish, to perfect, to present only our best selves. But the most interesting people I've encountered online are those who think out loud, who show their process, who aren't afraid to be wrong in public.
+                </p>
+
+                <p>
+                    I've been thinking about this lately because I keep catching myself in the same pattern: I'll work on something for weeks, maybe months, refining it in private until it feels "ready." And then, more often than not, it never sees the light of day. The bar for "ready" keeps moving. There's always one more thing to fix, one more edge case to handle, one more paragraph to rewrite.
+                </p>
+
+                <h2 id="perfectionism">The Perfectionism Trap</h2>
+
+                <p>
+                    Perfectionism is a peculiar form of procrastination. It masquerades as diligence, as high standards, as caring about quality. But really it's fear dressed up in respectable clothes. Fear of judgment, fear of being misunderstood, fear of putting something into the world that isn't quite right.
+                </p>
+
+                <p>
+                    The irony is that the things I've shared imperfectly—the rough drafts, the half-formed ideas, the "I'm not sure about this but here goes"—those are the things that have led to the most interesting conversations. They're the things that other people recognize themselves in.
+                </p>
+
+                <blockquote>
+                    "I am understood" is a wonderful feeling.
+                </blockquote>
+
+                <p>
+                    Someone on Twitter once told me they appreciated my willingness to share unfinished thoughts because it made them feel less alone in their own confusion. That stuck with me. We sanitize our public presence so much that we lose the most human parts—the uncertainty, the struggle, the process of figuring things out.
+                </p>
+
+                <h2 id="learning">Learning in Public</h2>
+
+                <p>
+                    There's a concept in software called "learning in public"—the idea that you should share what you're learning as you learn it, not after you've mastered it. It feels counterintuitive. Why would anyone want to hear from someone who's still figuring things out?
+                </p>
+
+                <h3>The Best Teachers Are One Step Ahead</h3>
+
+                <p>
+                    But here's what I've realized: the person who's one step ahead of you is often the best teacher. They remember what it was like to be confused. They haven't yet internalized all the tacit knowledge. They're still close enough to the beginner's mind to explain things clearly.
+                </p>
+
+                <p>
+                    When I write about something I'm learning, I'm not claiming expertise. I'm documenting the journey. And sometimes that's more valuable than the destination.
+                </p>
+
+                <h2 id="work">The Work That Matters</h2>
+
+                <p>
+                    I try to apply a rule now: if I do something and don't write about it—or otherwise generate external-facing evidence of it—it didn't happen. This sounds extreme, but it's been surprisingly liberating.
+                </p>
+
+                <p>
+                    It forces me to ask: is this worth doing at all? If I'm not willing to tell anyone about it, maybe it's not worth my time. And conversely, if it is worth doing, why keep it to myself?
+                </p>
+
+                <p>
+                    The work that matters—the thinking, the making, the learning—shouldn't happen in isolation. Not because we need an audience, but because sharing creates accountability. It makes the work more real. It transforms vague intentions into concrete artifacts.
+                </p>
+
+                <h2 id="final">Final Thoughts</h2>
+
+                <p>
+                    I don't think everyone needs to build in public. Some people work better in private. Some things genuinely benefit from being refined before release.
+                </p>
+
+                <p>
+                    But if you're like me—if you have a tendency to hoard your half-finished projects, to wait for the perfect moment, to keep your learning private—maybe try sharing something imperfect. Write the blog post before you feel ready. Push the code that's not quite polished. Tweet the idea that's still half-formed.
+                </p>
+
+                <p>
+                    You might be surprised by what happens.
+                </p>
+            </article>
+
+            <footer class="article-footer">
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/araujonrenan/" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/araujonrenan" target="_blank" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-text">
+                    2025 · Renan Araujo · <a href="/contact.html">Contact</a>
+                </div>
+            </footer>
+        </main>
+
+        <!-- Right Sidebar: References -->
+        <aside class="references-sidebar">
+            <h4>References</h4>
+            <div class="reference-item">
+                <span class="reference-number">1</span>
+                Example reference: <a href="#">Author (2024)</a>
+            </div>
+            <div class="reference-item">
+                <span class="reference-number">2</span>
+                Another reference to a <a href="#">paper or article</a>
+            </div>
+            <div class="reference-item">
+                <span class="reference-number">3</span>
+                Additional source information goes here
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

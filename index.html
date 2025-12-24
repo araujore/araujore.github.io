@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Writing</title>
+    <title>Renan Araujo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #fdfdf8;
-            --text: #1a1a1a;
+            --bg: #FFFFFF;
+            --text: #21232C;
             --text-light: #666;
             --border: #e0e0e0;
-            --accent: #2a5a8a;
-            --serif: 'Crimson Pro', Georgia, serif;
-            --mono: 'IBM Plex Mono', monospace;
+            --accent: #A47663;
+            --font-main: 'Lusitana', Georgia, serif;
         }
 
         * {
@@ -25,12 +24,51 @@
         }
 
         body {
-            font-family: var(--serif);
-            font-size: 20px;
+            font-family: var(--font-main);
+            font-size: 11pt;
             line-height: 1.6;
             color: var(--text);
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
+        }
+
+        .site-nav {
+            text-align: center;
+            padding: 40px 24px 20px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+        }
+
+        .site-nav h1 {
+            font-size: 20pt;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .site-nav nav {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .site-nav nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 11pt;
+            transition: color 0.2s ease;
+        }
+
+        .site-nav nav a:hover {
+            color: var(--accent);
+        }
+
+        .site-nav nav a.active {
+            border-bottom: 1px solid var(--text);
         }
 
         .container {
@@ -40,39 +78,23 @@
         }
 
         header {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             opacity: 0;
             animation: fadeIn 0.8s ease forwards;
         }
 
-        header h1 {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 8px;
+        header h2 {
+            font-size: 20pt;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 16px;
             letter-spacing: -0.02em;
         }
 
         header p {
-            color: var(--text-light);
-            font-size: 18px;
-        }
-
-        nav {
-            margin-top: 24px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-        }
-
-        nav a {
             color: var(--text);
-            text-decoration: none;
-            margin-right: 24px;
-            font-size: 16px;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent);
+            font-size: 11pt;
+            line-height: 1.7;
         }
 
         .posts {
@@ -90,43 +112,43 @@
             border-bottom: none;
         }
 
-        article h2 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            letter-spacing: -0.03em;
-            line-height: 1.2;
-        }
-
-        article h2 a {
+        article h3 {
+            font-size: 16pt;
+            font-weight: 700;
             color: var(--text);
-            text-decoration: none;
-            transition: color 0.2s ease;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
         }
 
-        article h2 a:hover {
+        article h3 a {
             color: var(--accent);
+            text-decoration: underline;
+            transition: opacity 0.2s ease;
+        }
+
+        article h3 a:hover {
+            opacity: 0.7;
         }
 
         .meta {
             display: flex;
-            gap: 16px;
-            font-size: 16px;
+            gap: 12px;
+            font-size: 10pt;
             color: var(--text-light);
-            margin-bottom: 16px;
-            font-family: var(--mono);
+            margin-bottom: 12px;
         }
 
         .excerpt {
-            font-size: 20px;
+            font-size: 11pt;
             line-height: 1.7;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .read-more {
             color: var(--accent);
-            text-decoration: none;
-            font-size: 18px;
+            text-decoration: underline;
+            font-size: 11pt;
             transition: opacity 0.2s ease;
         }
 
@@ -142,11 +164,50 @@
             margin-top: 80px;
             padding-top: 32px;
             border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--text-light);
-            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
             opacity: 0;
             animation: fadeIn 0.8s ease 0.4s forwards;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: var(--text);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.7;
+        }
+
+        .social-icons svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .footer-text {
+            font-size: 10pt;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .footer-text a {
+            color: var(--text);
+            text-decoration: underline;
         }
 
         @keyframes fadeIn {
@@ -161,8 +222,12 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                font-size: 18px;
+            .site-nav {
+                padding: 30px 20px 15px;
+            }
+
+            .site-nav nav {
+                gap: 20px;
             }
 
             .container {
@@ -170,40 +235,34 @@
             }
 
             header {
-                margin-bottom: 60px;
-            }
-
-            header h1 {
-                font-size: 24px;
-            }
-
-            article h2 {
-                font-size: 26px;
-            }
-
-            nav a {
-                display: inline-block;
-                margin-bottom: 8px;
+                margin-bottom: 40px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="site-nav">
+        <h1>Renan Araujo</h1>
+        <nav>
+            <a href="/" class="active">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/publications.html">Publications</a>
+            <a href="/articles.html">Articles</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </div>
+
     <div class="container">
         <header>
-            <h1>Your Name</h1>
-            <p>Thoughts on technology, philosophy, and other things</p>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/about.html">About</a>
-                <a href="/archive.html">Archive</a>
-                <a href="/feed.xml">RSS</a>
-            </nav>
+            <h2>Shaping AI policy at the frontier</h2>
+            <p>
+                Navigating transformative AI will be incredibly challenging—we need the best people cooperating to tackle it. I lead teams, design programs, and do policy research to increase talent working on AI policy and coordination among key actors. I specialize in the international governance of advanced AI.
+            </p>
         </header>
 
         <main class="posts">
             <article>
-                <h2><a href="/posts/building-in-public.html">Building in Public</a></h2>
+                <h3><a href="/article-template.html">Building in Public</a></h3>
                 <div class="meta">
                     <span>2024-12-20</span>
                     <span>•</span>
@@ -212,11 +271,11 @@
                 <p class="excerpt">
                     There's something paradoxical about sharing unfinished work. We're taught to polish, to perfect, to present only our best selves. But the most interesting people I've encountered online are those who think out loud, who show their process, who aren't afraid to be wrong in public.
                 </p>
-                <a href="/posts/building-in-public.html" class="read-more">Read more</a>
+                <a href="/article-template.html" class="read-more">Read more</a>
             </article>
 
             <article>
-                <h2><a href="/posts/notes-on-reading.html">Notes on Reading</a></h2>
+                <h3><a href="/article-template.html">Notes on Reading</a></h3>
                 <div class="meta">
                     <span>2024-12-10</span>
                     <span>•</span>
@@ -225,11 +284,11 @@
                 <p class="excerpt">
                     I've been thinking about how we read differently now. Not worse, just different. We skim, we scan, we search for the good bits. Maybe this is fine. Maybe the real insight is knowing when to slow down.
                 </p>
-                <a href="/posts/notes-on-reading.html" class="read-more">Read more</a>
+                <a href="/article-template.html" class="read-more">Read more</a>
             </article>
 
             <article>
-                <h2><a href="/posts/why-write.html">Why Write</a></h2>
+                <h3><a href="/article-template.html">Why Write</a></h3>
                 <div class="meta">
                     <span>2024-11-28</span>
                     <span>•</span>
@@ -238,12 +297,26 @@
                 <p class="excerpt">
                     The question comes up again and again: why bother writing if no one reads it? But that's the wrong question. Writing isn't just communication—it's thinking. The words you put on the page clarify what was murky in your head. That alone is worth it.
                 </p>
-                <a href="/posts/why-write.html" class="read-more">Read more</a>
+                <a href="/article-template.html" class="read-more">Read more</a>
             </article>
         </main>
 
         <footer>
-            <p>© 2024 Your Name. All thoughts my own.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/araujonrenan/" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/araujonrenan" target="_blank" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-text">
+                2025 · Renan Araujo · <a href="/contact.html">Contact</a>
+            </div>
         </footer>
     </div>
 </body>
