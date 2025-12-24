@@ -1,7 +1,5 @@
 # Renan Araujo - Writing Portfolio Website
 
-A clean, typography-focused personal website built with Lusitana font and minimal design. Features include article pages with table of contents, references sidebar, and RSS feed support.
-
 ## Files Included
 
 - `index.html` - Homepage with introduction and recent posts
