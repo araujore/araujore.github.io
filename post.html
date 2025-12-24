@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building in Public - Your Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdfdf8;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --border: #e0e0e0;
+            --accent: #2a5a8a;
+            --serif: 'Crimson Pro', Georgia, serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--serif);
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s ease;
+            display: inline-block;
+            margin-bottom: 32px;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .back-link::before {
+            content: '← ';
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .meta {
+            display: flex;
+            gap: 16px;
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-family: var(--mono);
+        }
+
+        article {
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.2s forwards;
+        }
+
+        article p {
+            margin-bottom: 24px;
+        }
+
+        article h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 48px 0 20px;
+            letter-spacing: -0.02em;
+        }
+
+        article h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 36px 0 16px;
+        }
+
+        article a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: opacity 0.2s ease;
+        }
+
+        article a:hover {
+            opacity: 0.7;
+        }
+
+        article blockquote {
+            border-left: 3px solid var(--border);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        article code {
+            font-family: var(--mono);
+            font-size: 17px;
+            background: #f5f5f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        article pre {
+            background: #f5f5f0;
+            padding: 20px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+
+        article pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .post-footer {
+            margin-top: 60px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+        }
+
+        .post-footer a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .post-footer a:hover {
+            color: var(--accent);
+        }
+
+        .prev::before {
+            content: '← ';
+        }
+
+        .next::after {
+            content: ' →';
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 16px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.4s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            article h2 {
+                font-size: 24px;
+            }
+
+            .post-footer {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="back-link">Home</a>
+            <h1>Building in Public</h1>
+            <div class="meta">
+                <span>December 20, 2024</span>
+                <span>•</span>
+                <span>5 min read</span>
+            </div>
+        </header>
+
+        <article>
+            <p>
+                There's something paradoxical about sharing unfinished work. We're taught to polish, to perfect, to present only our best selves. But the most interesting people I've encountered online are those who think out loud, who show their process, who aren't afraid to be wrong in public.
+            </p>
+
+            <p>
+                I've been thinking about this lately because I keep catching myself in the same pattern: I'll work on something for weeks, maybe months, refining it in private until it feels "ready." And then, more often than not, it never sees the light of day. The bar for "ready" keeps moving. There's always one more thing to fix, one more edge case to handle, one more paragraph to rewrite.
+            </p>
+
+            <h2>The Perfectionism Trap</h2>
+
+            <p>
+                Perfectionism is a peculiar form of procrastination. It masquerades as diligence, as high standards, as caring about quality. But really it's fear dressed up in respectable clothes. Fear of judgment, fear of being misunderstood, fear of putting something into the world that isn't quite right.
+            </p>
+
+            <p>
+                The irony is that the things I've shared imperfectly—the rough drafts, the half-formed ideas, the "I'm not sure about this but here goes"—those are the things that have led to the most interesting conversations. They're the things that other people recognize themselves in.
+            </p>
+
+            <blockquote>
+                "I am understood" is a wonderful feeling.
+            </blockquote>
+
+            <p>
+                Someone on Twitter once told me they appreciated my willingness to share unfinished thoughts because it made them feel less alone in their own confusion. That stuck with me. We sanitize our public presence so much that we lose the most human parts—the uncertainty, the struggle, the process of figuring things out.
+            </p>
+
+            <h2>Learning in Public</h2>
+
+            <p>
+                There's a concept in software called "learning in public"—the idea that you should share what you're learning as you learn it, not after you've mastered it. It feels counterintuitive. Why would anyone want to hear from someone who's still figuring things out?
+            </p>
+
+            <p>
+                But here's what I've realized: the person who's one step ahead of you is often the best teacher. They remember what it was like to be confused. They haven't yet internalized all the tacit knowledge. They're still close enough to the beginner's mind to explain things clearly.
+            </p>
+
+            <p>
+                When I write about something I'm learning, I'm not claiming expertise. I'm documenting the journey. And sometimes that's more valuable than the destination.
+            </p>
+
+            <h2>The Work That Matters</h2>
+
+            <p>
+                I try to apply a rule now: if I do something and don't write about it—or otherwise generate external-facing evidence of it—it didn't happen. This sounds extreme, but it's been surprisingly liberating.
+            </p>
+
+            <p>
+                It forces me to ask: is this worth doing at all? If I'm not willing to tell anyone about it, maybe it's not worth my time. And conversely, if it is worth doing, why keep it to myself?
+            </p>
+
+            <p>
+                The work that matters—the thinking, the making, the learning—shouldn't happen in isolation. Not because we need an audience, but because sharing creates accountability. It makes the work more real. It transforms vague intentions into concrete artifacts.
+            </p>
+
+            <h2>Final Thoughts</h2>
+
+            <p>
+                I don't think everyone needs to build in public. Some people work better in private. Some things genuinely benefit from being refined before release.
+            </p>
+
+            <p>
+                But if you're like me—if you have a tendency to hoard your half-finished projects, to wait for the perfect moment, to keep your learning private—maybe try sharing something imperfect. Write the blog post before you feel ready. Push the code that's not quite polished. Tweet the idea that's still half-formed.
+            </p>
+
+            <p>
+                You might be surprised by what happens.
+            </p>
+
+            <div class="post-footer">
+                <a href="/posts/notes-on-reading.html" class="prev">Notes on Reading</a>
+                <a href="/" class="next">All posts</a>
+            </div>
+        </article>
+
+        <footer>
+            <p>© 2024 Your Name. All thoughts my own.</p>
+        </footer>
+    </div>
+</body>
+</html>

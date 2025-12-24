@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Your Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fdfdf8;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --border: #e0e0e0;
+            --accent: #2a5a8a;
+            --serif: 'Crimson Pro', Georgia, serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--serif);
+            font-size: 20px;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s ease;
+            display: inline-block;
+            margin-bottom: 32px;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .back-link::before {
+            content: '← ';
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        main {
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.2s forwards;
+        }
+
+        main p {
+            margin-bottom: 24px;
+        }
+
+        main h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 48px 0 20px;
+            letter-spacing: -0.02em;
+        }
+
+        main a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: opacity 0.2s ease;
+        }
+
+        main a:hover {
+            opacity: 0.7;
+        }
+
+        .contact {
+            margin-top: 48px;
+            padding: 24px;
+            background: #f9f9f4;
+            border-radius: 4px;
+        }
+
+        .contact h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 16px;
+            border-bottom: none;
+            transition: color 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 16px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.4s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            main h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="back-link">Home</a>
+            <h1>About</h1>
+        </header>
+
+        <main>
+            <p>
+                Hi, I'm [Your Name]. I write about [your topics of interest].
+            </p>
+
+            <p>
+                This is a space for thinking out loud—for exploring ideas that I'm still working through, for documenting things I'm learning, and for sharing the occasional finished thought. Most of what you'll find here is rough around the edges. That's intentional.
+            </p>
+
+            <h2>What I'm Interested In</h2>
+
+            <p>
+                Right now I'm thinking a lot about [topic 1], [topic 2], and [topic 3]. I'm also interested in [hobby/interest] and spend too much time [activity].
+            </p>
+
+            <p>
+                I believe in building in public, learning in public, and generally being less precious about sharing unfinished work. This site is an experiment in that direction.
+            </p>
+
+            <h2>What I'm Working On</h2>
+
+            <p>
+                Currently I'm working on [project/job description]. Before this, I [brief professional background].
+            </p>
+
+            <p>
+                On the side, I'm reading [current books], writing [current writing projects], and trying to [current goal or habit].
+            </p>
+
+            <h2>Why This Site Exists</h2>
+
+            <p>
+                I started this site because I wanted a place to think out loud without the constraints of social media. No character limits, no algorithmic feed, no pressure to be performative. Just writing for the sake of thinking more clearly.
+            </p>
+
+            <p>
+                If something here resonates with you, I'd love to hear from you. These ideas are better when they're conversations.
+            </p>
+
+            <div class="contact">
+                <h3>Get in Touch</h3>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com">Email</a>
+                    <a href="https://twitter.com/yourusername">Twitter</a>
+                    <a href="https://github.com/yourusername">GitHub</a>
+                    <a href="/feed.xml">RSS</a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 Your Name. All thoughts my own.</p>
+        </footer>
+    </div>
+</body>
+</html>
