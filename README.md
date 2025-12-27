@@ -3,7 +3,7 @@
 ## Files Included
 
 - `index.html` - Homepage with introduction and recent posts
-- `article-template.html` - Article template with TOC, references sidebar, and social footer
+- `article-template.html` - Article template with table of contents, references sidebar, and social footer
 - `publications.html` - Portfolio-style grid for publications with covers
 - `articles.html` - Blog listing page
 - `about.html` - About page
