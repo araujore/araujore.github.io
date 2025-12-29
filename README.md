@@ -1,220 +1,227 @@
-# Renan Araujo - Writing Portfolio Website
+# Renan Araujo - Personal Website
 
-## Files Included
+A clean, typography-focused personal website built with Lusitana font. Features include blog posts with table of contents, references sidebar, comments system, and publications portfolio.
 
-- `index.html` - Homepage with introduction and recent posts
-- `article-template.html` - Article template with table of contents, references sidebar, and social footer
-- `publications.html` - Portfolio-style grid for publications with covers
-- `articles.html` - Blog listing page
-- `about.html` - About page
-- `contact.html` - Contact page
-- `feed.xml` - RSS feed for blog subscribers
+## 🎨 Design Features
 
-## Design Features
-
-### Typography & Headings
+- **Background**: #F5F5F5 (light gray)
 - **Font**: Lusitana from Google Fonts
 - **Body text**: 11pt, #21232C
 - **H1**: 20pt, bold, #A47663 (accent color)
 - **H2**: 16pt, bold, #21232C
 - **H3**: 14pt, italic, #21232C
 - **Links**: #A47663, underlined (except in navigation)
-- **Background**: Pure white (#FFFFFF)
 
-### Article Layout
-- Three-column layout: Table of Contents (left) | Article (center, ~650px wide) | References (right)
-- Sticky TOC and references sidebars
-- Social footer with LinkedIn and Twitter icons
-- Responsive design collapses to single column on mobile
-
-## How to Post New Articles
-
-### Step 1: Create the Article File
-1. Duplicate `article-template.html`
-2. Rename it (e.g., `my-new-article.html`)
-3. Update the content:
-   - Change `<title>` tag
-   - Update `<h1>` heading
-   - Update the date in meta section
-   - Replace article content
-   - Update Table of Contents links to match your H2 headings
-   - Add your references in the right sidebar
-
-### Step 2: Update the Table of Contents
-In your new article, update the TOC to match your H2 headings:
-
-```html
-<aside class="toc-sidebar">
-    <h4>Contents</h4>
-    <ul>
-        <li><a href="#section1">Your First H2 Heading</a></li>
-        <li><a href="#section2">Your Second H2 Heading</a></li>
-    </ul>
-</aside>
-```
-
-Make sure to add matching `id` attributes to your H2 tags:
-```html
-<h2 id="section1">Your First H2 Heading</h2>
-```
-
-### Step 3: Add to Article Listing
-Update `articles.html` and `index.html` to include your new post:
-
-```html
-<article>
-    <h3><a href="/your-new-article.html">Your Article Title</a></h3>
-    <div class="meta">
-        <span>2025-01-15</span>
-        <span>•</span>
-        <span>7 min read</span>
-    </div>
-    <p class="excerpt">
-        Your article excerpt here...
-    </p>
-    <a href="/your-new-article.html" class="read-more">Read more</a>
-</article>
-```
-
-### Step 4: Update RSS Feed
-Edit `feed.xml` and add a new item at the top:
-
-```xml
-<item>
-    <title>Your Article Title</title>
-    <link>https://yourdomain.com/your-new-article.html</link>
-    <description>Your article excerpt...</description>
-    <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
-    <guid>https://yourdomain.com/your-new-article.html</guid>
-</item>
-```
-
-### Step 5: Upload
-Upload the new/updated files to your hosting:
-- New article HTML file
-- Updated `articles.html`
-- Updated `index.html` (if showing on homepage)
-- Updated `feed.xml`
-
-## RSS Feed & Subscriptions
-
-### What is RSS?
-RSS is a web feed that allows readers to access updates to your blog in a standardized format. Readers use RSS reader apps (like Feedly, Inoreader, NetNewsWire) to subscribe to your feed.
-
-### How to Enable RSS on Your Site
-
-**Your RSS feed is already created** (`feed.xml`). Here's how to make it discoverable:
-
-1. **Link to it in your navigation**
-   - Add "Subscribe" or "RSS" link to your site nav
-   - Link to: `https://yourdomain.com/feed.xml`
-
-2. **Add auto-discovery tag** (optional but recommended)
-   Add this to the `<head>` of each page:
-   ```html
-   <link rel="alternate" type="application/rss+xml" title="Renan Araujo" href="/feed.xml">
-   ```
-
-### Email Subscriptions (Alternative to RSS)
-
-RSS works well for technical audiences, but for broader reach, consider email subscriptions:
-
-**Free Options:**
-1. **Buttondown** (buttondown.email) - Free for up to 100 subscribers, then $9/month
-2. **Substack** (substack.com) - Free, takes 10% of paid subscriptions
-3. **Mailchimp** - Free up to 500 subscribers
-
-**How it works:**
-- Add a signup form to your site
-- When you publish a new article, send it via email
-- More reader-friendly than RSS for non-technical audiences
-
-**Recommended:** Start with RSS (already built!), add email later if you want broader reach.
-
-## Customizing the Design
-
-### Change Colors
-Edit CSS variables in any HTML file:
-```css
-:root {
-    --bg: #FFFFFF;
-    --text: #21232C;
-    --text-light: #666;
-    --accent: #A47663;
-}
-```
-
-### Adjust Article Width
-In `article-template.html`, find:
-```css
-.main-content {
-    max-width: 650px;
-}
-```
-Change `650px` to your preferred width.
-
-### Modify Heading Styles
-Find and edit these sections in the CSS:
-```css
-h1 { font-size: 20pt; font-weight: 700; color: var(--accent); }
-h2 { font-size: 16pt; font-weight: 700; color: var(--text); }
-h3 { font-size: 14pt; font-weight: 400; font-style: italic; }
-```
-
-## File Structure
+## 📁 File Structure
 
 ```
 your-site/
-├── index.html                 # Homepage
-├── about.html                 # About page
-├── publications.html          # Publications grid
-├── articles.html             # Articles listing
-├── contact.html              # Contact page
-├── article-template.html     # Use this as template for new articles
-├── feed.xml                  # RSS feed
-└── [your-article-files].html # Your published articles
+├── index.html              # About/Home page (merged)
+├── blog.html               # Blog listing page
+├── publications.html       # Publications portfolio
+├── contact.html            # Contact page
+├── blog/
+│   ├── building-in-public.html
+│   ├── notes-on-reading.html
+│   └── why-write.html
+└── images/
+    ├── compressed_headshot_2025.png
+    ├── 2017_Søren_Solkær_-_Black_Sun_8__starling_murmurations_.jpg
+    ├── 2011_NASA_Endeavour_Launch_2011_-_Editado.jpg
+    └── 1872_Monet_-_Impression__Sunrise.jpg
 ```
 
-## Hosting Options
+## ✅ What's Implemented
 
-### GitHub Pages (Recommended for simplicity)
+### Homepage (index.html)
+- Combined About + Home page
+- Center-aligned hero with tagline
+- Images with captions
+- Sections: My work, Other work interests, About me
+- Your headshot with download link
+
+### Blog System
+- Blog listing page with clean layout
+- Individual post pages with:
+  - Table of contents (left sidebar)
+  - Main content (center, ~650px wide)
+  - References (right sidebar with inline citations)
+  - Comments section using Giscus
+  - Social footer
+- Three sample posts included
+
+### Other Pages
+- Publications: Portfolio grid for publication covers
+- Contact: Simple contact page with links
+
+## 📝 How to Add a New Blog Post
+
+### Step 1: Create the HTML File
+1. Duplicate one of the blog post files (e.g., `blog/building-in-public.html`)
+2. Rename it (e.g., `blog/my-new-post.html`)
+
+### Step 2: Update the Content
+```html
+<!-- Update title -->
+<title>Your Post Title - Renan Araujo</title>
+
+<!-- Update h1 -->
+<h1>Your Post Title</h1>
+
+<!-- Update date -->
+<p class="meta">January 15, 2025</p>
+
+<!-- Update table of contents -->
+<aside class="toc-sidebar">
+    <h4>Contents</h4>
+    <ul>
+        <li><a href="#section1">Your First Section</a></li>
+        <li><a href="#section2">Your Second Section</a></li>
+    </ul>
+</aside>
+
+<!-- Update h2 headings with matching IDs -->
+<h2 id="section1">Your First Section</h2>
+```
+
+### Step 3: Add Inline Citations
+```html
+<p>
+    Your text here with a citation.<a href="#ref1" class="citation">1</a>
+</p>
+```
+
+### Step 4: Add References
+```html
+<aside class="references-sidebar">
+    <h4>References</h4>
+    <div class="reference-item" id="ref1">
+        <span class="reference-number">1</span>
+        Author. (Year). <a href="URL" target="_blank">Title</a>
+    </div>
+</aside>
+```
+
+### Step 5: Add to Blog Listing
+Update `blog.html`:
+```html
+<article>
+    <h3><a href="/blog/your-new-post.html">Your Post Title</a></h3>
+    <p class="meta">January 15, 2025</p>
+    <p class="excerpt">
+        Your post excerpt here...
+    </p>
+</article>
+```
+
+### Step 6: Upload Files
+Upload both the new post file and the updated `blog.html`
+
+## 💬 Setting Up Comments
+
+The blog posts use Giscus (GitHub-based comments). To enable:
+
+1. Go to https://giscus.app/
+2. Enter your GitHub repository name
+3. Enable Discussions in your repo settings
+4. Configure your preferences on giscus.app
+5. Copy the generated `<script>` tag
+6. Replace the placeholder script in each blog post
+
+Current placeholder:
+```html
+<script src="https://giscus.app/client.js"
+        data-repo="YOUR-GITHUB-USERNAME/YOUR-REPO-NAME"
+        data-repo-id="YOUR-REPO-ID"
+        ...
+</script>
+```
+
+## 🖼️ Adding Images
+
+All images are in the `/images/` directory. To add new images:
+
+1. Upload image to `/images/` folder
+2. Reference in HTML:
+```html
+<div class="hero-image">
+    <img src="/images/your-image.jpg" alt="Description">
+</div>
+<p class="image-caption">
+    <a href="https://source-url.com">Image Title</a>, Artist (Year)
+</p>
+```
+
+## 📚 Adding Publications
+
+Update `publications.html`:
+
+```html
+<a href="URL_TO_PUBLICATION" class="publication-item" target="_blank">
+    <div class="publication-cover">
+        <img src="/images/cover.jpg" alt="Publication title">
+    </div>
+    <h3 class="publication-title">Your Publication Title</h3>
+    <p class="publication-meta">Journal/Venue • Year</p>
+    <p class="publication-description">
+        Brief description of the publication
+    </p>
+</a>
+```
+
+## 🎨 Customizing Colors
+
+Edit CSS variables in any HTML file:
+```css
+:root {
+    --bg: #F5F5F5;           /* Background */
+    --text: #21232C;         /* Body text */
+    --text-light: #666;      /* Metadata */
+    --caption: #B2B7CC;      /* Image captions */
+    --accent: #A47663;       /* Links, H1 */
+}
+```
+
+## 🚀 Hosting on GitHub Pages
+
 1. Create repository: `yourusername.github.io`
-2. Upload all HTML/XML files
-3. Site will be live at `https://yourusername.github.io`
-4. Free, easy updates via git
+2. Upload all files maintaining the folder structure
+3. Make sure images are in `/images/` and blog posts in `/blog/`
+4. Site will be live at `https://yourusername.github.io`
 
-### Netlify (Recommended for custom domains)
-1. Drag and drop your folder to netlify.com
-2. Get instant URL or connect custom domain
-3. Free tier includes HTTPS and custom domains
+## 📋 Quick Checklist
 
-### Custom Domain
-If you have a domain (like `araujorenan.com`):
-- Point it to your GitHub Pages or Netlify site
-- Both services have guides for custom domains
-
-## Quick Start Checklist
-
-- [ ] Replace all "Your Name" with your actual info
-- [ ] Update social links (LinkedIn, Twitter) in all files
-- [ ] Update `feed.xml` with your domain
-- [ ] Write your first real article using the template
-- [ ] Add your publications with cover images
+- [ ] Replace placeholder email in contact.html
+- [ ] Set up Giscus comments for blog posts
+- [ ] Add your actual publications with covers
+- [ ] Replace sample blog posts with your content
+- [ ] Update social links (already set to your profiles)
+- [ ] Upload all images to `/images/` folder
 - [ ] Test all links work
-- [ ] Upload to hosting
-- [ ] Share the URL!
+- [ ] Deploy to GitHub Pages
 
-## Questions?
+## 🔧 Technical Notes
 
-**Q: How do I add images to articles?**
-A: Upload images to your hosting, then use: `<img src="/images/photo.jpg" alt="Description">`
+- Three-column layout for blog posts collapses to single column on mobile
+- References sidebar appears parallel to where citations appear in text
+- All pages use sticky navigation
+- Images automatically resize for mobile
+- Comments require GitHub account (via Giscus)
 
-**Q: Can I add more sections to the navigation?**
-A: Yes! Just add another link in the `<nav>` section of each page.
+## ❓ Common Questions
 
-**Q: How do I change the social icons in the footer?**
-A: Edit the `<svg>` elements or find new icons at sites like heroicons.com
+**Q: How do I change the navigation menu?**
+A: Edit the `<nav>` section in each HTML file's `.site-nav` div.
 
-## License
+**Q: Can I add more pages?**
+A: Yes! Duplicate any existing page and modify the content. Add a link in the navigation.
+
+**Q: How do I change fonts?**
+A: Update the Google Fonts link in `<head>` and the `--font-main` variable in CSS.
+
+**Q: References aren't showing parallel to citations?**
+A: The references sidebar is sticky and scrolls with the page. Make sure citations use `<a href="#ref1" class="citation">1</a>` and references have matching `id="ref1"`.
+
+## 📄 License
 
 Free to use however you like. No attribution required.

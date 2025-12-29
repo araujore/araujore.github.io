@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Renan Araujo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F5F5F5;
+            --text: #21232C;
+            --text-light: #666;
+            --border: #e0e0e0;
+            --accent: #A47663;
+            --font-main: 'Lusitana', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            font-size: 11pt;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .site-nav {
+            text-align: center;
+            padding: 40px 24px 20px;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+        }
+
+        .site-nav h1 {
+            font-size: 20pt;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .site-nav nav {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .site-nav nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 11pt;
+            transition: color 0.2s ease;
+        }
+
+        .site-nav nav a:hover {
+            color: var(--accent);
+        }
+
+        .site-nav nav a.active {
+            border-bottom: 1px solid var(--text);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        header h2 {
+            font-size: 20pt;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            color: var(--text);
+            font-size: 11pt;
+            max-width: 680px;
+        }
+
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.2s forwards;
+        }
+
+        .publication-item {
+            display: block;
+            text-decoration: none;
+            color: var(--text);
+            transition: transform 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .publication-cover {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .publication-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .publication-cover.placeholder {
+            color: var(--text-light);
+            font-size: 10pt;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .publication-title {
+            font-size: 13pt;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .publication-item:hover .publication-title {
+            opacity: 0.7;
+        }
+
+        .publication-meta {
+            font-size: 10pt;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .publication-description {
+            font-size: 10pt;
+            line-height: 1.5;
+            color: var(--text);
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.4s forwards;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: var(--text);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            opacity: 0.7;
+        }
+
+        .social-icons svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .footer-text {
+            font-size: 10pt;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .footer-text a {
+            color: var(--text);
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-nav {
+                padding: 30px 20px 15px;
+            }
+
+            .site-nav nav {
+                gap: 20px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            .publications-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="site-nav">
+        <h1>Renan Araujo</h1>
+        <nav>
+            <a href="/">About</a>
+            <a href="/publications.html" class="active">Publications</a>
+            <a href="/blog.html">Blog</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header>
+            <h2>Publications</h2>
+            <p>Selected papers, reports, and other published work on AI governance and policy.</p>
+        </header>
+
+        <main class="publications-grid">
+            <!-- Add your publications here -->
+            <a href="https://example.com/publication-1" class="publication-item" target="_blank">
+                <div class="publication-cover placeholder">
+                    Add cover image
+                </div>
+                <h3 class="publication-title">Title of Your Publication</h3>
+                <p class="publication-meta">Journal Name • 2024</p>
+                <p class="publication-description">
+                    Brief description of the publication and its key contributions to the field.
+                </p>
+            </a>
+
+            <a href="https://example.com/publication-2" class="publication-item" target="_blank">
+                <div class="publication-cover placeholder">
+                    Add cover image
+                </div>
+                <h3 class="publication-title">Another Publication Title</h3>
+                <p class="publication-meta">Conference Proceedings • 2023</p>
+                <p class="publication-description">
+                    Another brief description highlighting the main findings or arguments.
+                </p>
+            </a>
+        </main>
+
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/araujonrenan/" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/araujonrenan" target="_blank" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-text">
+                2025 · Renan Araujo · <a href="/contact.html">Contact</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

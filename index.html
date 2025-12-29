@@ -9,9 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #FFFFFF;
+            --bg: #F5F5F5;
             --text: #21232C;
             --text-light: #666;
+            --caption: #B2B7CC;
             --border: #e0e0e0;
             --accent: #A47663;
             --font-main: 'Lusitana', Georgia, serif;
@@ -77,87 +78,120 @@
             padding: 60px 24px;
         }
 
-        header {
+        /* Hero section */
+        .hero {
+            text-align: center;
             margin-bottom: 60px;
             opacity: 0;
             animation: fadeIn 0.8s ease forwards;
         }
 
-        header h2 {
-            font-size: 20pt;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        header p {
+        .hero-title {
+            font-size: 24pt;
+            font-weight: 400;
             color: var(--text);
-            font-size: 11pt;
-            line-height: 1.7;
-        }
-
-        .posts {
-            opacity: 0;
-            animation: fadeIn 0.8s ease 0.2s forwards;
-        }
-
-        article {
-            margin-bottom: 48px;
-            padding-bottom: 48px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        article:last-child {
-            border-bottom: none;
-        }
-
-        article h3 {
-            font-size: 16pt;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 12px;
+            margin-bottom: 24px;
             letter-spacing: -0.02em;
             line-height: 1.3;
         }
 
-        article h3 a {
-            color: var(--accent);
-            text-decoration: underline;
-            transition: opacity 0.2s ease;
-        }
-
-        article h3 a:hover {
-            opacity: 0.7;
-        }
-
-        .meta {
-            display: flex;
-            gap: 12px;
-            font-size: 10pt;
-            color: var(--text-light);
-            margin-bottom: 12px;
-        }
-
-        .excerpt {
+        .hero-text {
             font-size: 11pt;
             line-height: 1.7;
-            margin-bottom: 12px;
+            margin-bottom: 40px;
         }
 
-        .read-more {
+        .hero-image {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            font-size: 8pt;
+            font-style: italic;
+            color: var(--caption);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .image-caption a {
+            color: var(--caption);
+            text-decoration: underline;
+        }
+
+        /* Content sections */
+        section {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.2s forwards;
+        }
+
+        h1 {
+            font-size: 20pt;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 16pt;
+            font-weight: 700;
+            color: var(--text);
+            margin: 32px 0 16px;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 14pt;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text);
+            margin: 24px 0 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        a {
             color: var(--accent);
             text-decoration: underline;
-            font-size: 11pt;
             transition: opacity 0.2s ease;
         }
 
-        .read-more:hover {
+        a:hover {
             opacity: 0.7;
         }
 
-        .read-more::after {
-            content: ' →';
+        .headshot-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .headshot-container img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 12px;
+        }
+
+        .headshot-caption {
+            font-size: 9pt;
+            font-style: italic;
+            color: var(--caption);
+        }
+
+        .headshot-caption a {
+            color: var(--caption);
+            text-decoration: underline;
         }
 
         footer {
@@ -234,8 +268,12 @@
                 padding: 40px 20px;
             }
 
-            header {
-                margin-bottom: 40px;
+            .hero-title {
+                font-size: 20pt;
+            }
+
+            .headshot-container img {
+                max-width: 300px;
             }
         }
     </style>
@@ -245,60 +283,96 @@
         <h1>Renan Araujo</h1>
         <nav>
             <a href="/" class="active">About</a>
-            <a href="/research.html">Research</a>
+            <a href="/publications.html">Publications</a>
             <a href="/blog.html">Blog</a>
             <a href="/contact.html">Contact</a>
         </nav>
     </div>
 
     <div class="container">
-        <header>
-            <h2>Shaping AI policy at the frontier</h2>
-            <p>
+        <section class="hero">
+            <h2 class="hero-title">Shaping AI policy at the frontier</h2>
+            <p class="hero-text">
                 Navigating transformative AI will be incredibly challenging—we need the best people cooperating to tackle it. I lead teams, design programs, and do policy research to increase talent working on AI policy and coordination among key actors. I specialize in the international governance of advanced AI.
             </p>
-        </header>
+            <div class="hero-image">
+                <img src="/images/2017_Søren_Solkær_-_Black_Sun_8__starling_murmurations_.jpg" alt="Black Sun by Søren Solkær">
+            </div>
+            <p class="image-caption">
+                <a href="https://www.sorensolkaer.com/photographs/blacksun">Black Sun</a>, Søren Solkær (2017)
+            </p>
+        </section>
 
-        <main class="posts">
-            <article>
-                <h3><a href="/article-template.html">Building in Public</a></h3>
-                <div class="meta">
-                    <span>2024-12-20</span>
-                    <span>•</span>
-                    <span>5 min read</span>
-                </div>
-                <p class="excerpt">
-                    There's something paradoxical about sharing unfinished work. We're taught to polish, to perfect, to present only our best selves. But the most interesting people I've encountered online are those who think out loud, who show their process, who aren't afraid to be wrong in public.
-                </p>
-                <a href="/article-template.html" class="read-more">Read more</a>
-            </article>
+        <section>
+            <h1>My work</h1>
+            <p>
+                I'm Director of Programs at the <a href="https://www.iaps.ai">Institute for AI Policy and Strategy</a> (IAPS). I also work closely with the <a href="https://www.governance.ai">Oxford Martin AI Governance Initiative</a>, as a research affiliate, and the <a href="https://www.oxfordchinapolicylab.org">Oxford China Policy Lab</a>, as a fellow. I'm a lawyer with experience in comparative policy and emergent technologies.
+            </p>
 
-            <article>
-                <h3><a href="/article-template.html">Notes on Reading</a></h3>
-                <div class="meta">
-                    <span>2024-12-10</span>
-                    <span>•</span>
-                    <span>3 min read</span>
-                </div>
-                <p class="excerpt">
-                    I've been thinking about how we read differently now. Not worse, just different. We skim, we scan, we search for the good bits. Maybe this is fine. Maybe the real insight is knowing when to slow down.
-                </p>
-                <a href="/article-template.html" class="read-more">Read more</a>
-            </article>
+            <h2>Programs</h2>
+            <p>
+                I design programs to find and bolster talented people to work on AI policy, mainly via the <a href="https://www.iaps.ai/fellowship">IAPS Fellowship</a>. I also run coordination activities, such as one-off conferences and regular working groups, to ensure we're making the most of the talent we have.
+            </p>
 
-            <article>
-                <h3><a href="/article-template.html">Why Write</a></h3>
-                <div class="meta">
-                    <span>2024-11-28</span>
-                    <span>•</span>
-                    <span>4 min read</span>
-                </div>
-                <p class="excerpt">
-                    The question comes up again and again: why bother writing if no one reads it? But that's the wrong question. Writing isn't just communication—it's thinking. The words you put on the page clarify what was murky in your head. That alone is worth it.
+            <h2>People and teams</h2>
+            <p>
+                Managing people and getting teams off the ground are a core part of my work. I manage researchers and fellows at IAPS, am an advisor and board member of <a href="https://forum.effectivealtruism.org/posts/hJKuNhr8YzPcKEFvc/ai-safety-organizations">several nonprofits</a> in the AI policy space, and mentor aspiring AI policy professionals in <a href="https://www.bluedot.org">various</a> <a href="https://www.condorinitiative.org">programs</a>.
+            </p>
+
+            <h2>Research</h2>
+            <p>
+                My <a href="https://scholar.google.com/citations?user=EXAMPLE">research interests</a> include emerging governmental institutions handling advanced AI, the implications of stronger state involvement in developing AGI, and Sino-western relations on AI.
+            </p>
+
+            <div class="headshot-container">
+                <img src="/images/compressed_headshot_2025.png" alt="Renan Araujo headshot">
+                <p class="headshot-caption">
+                    <a href="https://bit.ly/renanheadshot2025">You can download this photo here if you need it.</a>
                 </p>
-                <a href="/article-template.html" class="read-more">Read more</a>
-            </article>
-        </main>
+            </div>
+        </section>
+
+        <section>
+            <h1>Other work interests</h1>
+
+            <h2>Developing countries and AI</h2>
+            <p>
+                I co-founded and advise the <a href="https://www.condorinitiative.org">Condor Initiative</a>, an educational nonprofit that elevates talented students from LMIC to work on AI safety and governance. I'm enthusiastic about the role that developing countries can play in global AI policy, and also follow governance developments in regions such as Latin America, Africa, and South/Southeast Asia.
+            </p>
+
+            <h2>Governing emergent technologies</h2>
+            <p>
+                Besides AI, I've worked on the governance of fields such as bio, nuclear, and space technology. At <a href="https://rethinkpriorities.org">Rethink Priorities</a>, I ran an incubator of nonprofits reducing global risks (of which the Vista Institute and Condor came out). At the <a href="https://www.law.ox.ac.uk/research-subject-groups/institute-ethics-law-and-armed-conflict">Institute for Law and AI</a>, I analyzed all <a href="https://constitutions.app">constitutions</a> ever written on their protection of future generations, and legal mechanisms to improve <a href="https://www.spacelaw.ox.ac.uk">space governance</a>.
+            </p>
+
+            <div class="hero-image" style="margin-top: 40px;">
+                <img src="/images/2011_NASA_Endeavour_Launch_2011_-_Editado.jpg" alt="Launch of the Endeavour shuttle">
+            </div>
+            <p class="image-caption">
+                <a href="https://www.nasa.gov/mission_pages/shuttle/shuttlemissions/sts134/index.html">Launch of the Endeavour shuttle</a>, NASA (2011)
+            </p>
+        </section>
+
+        <section>
+            <h1>About me</h1>
+
+            <h2>My previous life as a lawyer</h2>
+            <p>
+                I'm a lawyer by training with a master's degree from the London School of Economics in criminology. I worked for five years as chief of staff of Justices of Appeal at the Pernambuco State Court – that was during and a bit after law school, and I was the youngest chief of staff at the court then. During that time, I also co-led a <a href="https://example.com">group</a> of 50 students and lawyers providing free legal counseling for inmates in Brazil.
+            </p>
+
+            <h2>Personal</h2>
+            <p>
+                I live in east London, UK. Outside work, I love volunteering (from animal welfare to human rights, but more recently mostly advising nonprofits on AI policy), traveling (before moving to the UK, my wife and I were "digital nomads" for two years, living in places ranging from Buenos Aires and Lisbon to Bangkok and Tokyo), have been training endurance sports (currently aiming for a half Ironman), deeply enjoy visual arts and music, and love hunting for second-hand books. I hail from Recife, in <a href="https://en.wikipedia.org/wiki/Northeast_Region,_Brazil">northeastern Brazil</a> – the best region of the country, if you want the opinion of an impartial observer.
+            </p>
+
+            <div class="hero-image" style="margin-top: 40px;">
+                <img src="/images/1872_Monet_-_Impression__Sunrise.jpg" alt="Impression, Sunrise by Monet">
+            </div>
+            <p class="image-caption">
+                Impression, Sunrise, Monet (1872)
+            </p>
+        </section>
 
         <footer>
             <div class="social-icons">
