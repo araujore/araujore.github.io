@@ -1,29 +1,28 @@
 # Renan Araujo - Personal Website
 
-A clean, typography-focused personal website built with Lusitana font. Features include blog posts with table of contents, references sidebar, comments system, and publications portfolio.
+A clean, typography-focused personal website built with Lusitana font. Features include blog posts with table of contents, references sidebar, comments system, and publications list.
 
-## 🎨 Design Features
+Design features
 
-- **Background**: #F5F5F5 (light gray)
-- **Font**: Lusitana from Google Fonts
-- **Body text**: 11pt, #21232C
-- **H1**: 20pt, bold, #A47663 (accent color)
-- **H2**: 16pt, bold, #21232C
-- **H3**: 14pt, italic, #21232C
-- **Links**: #A47663, underlined (except in navigation)
+Background: #F5F5F5 (light gray)
+Font: Lusitana from Google Fonts
+Body text: 11pt, #21232C
+H1: 22pt, bold, #21232C
+H2: 18pt, bold, #21232C
+H3: 14pt, italic, #21232C
+Links: #A47663, underlined (except in navigation)
 
-## 📁 File Structure
+File structure
 
 ```
 your-site/
 ├── index.html              # About/Home page (merged)
 ├── blog.html               # Blog listing page
-├── publications.html       # Publications portfolio
+├── publications.html       # Publications list
 ├── contact.html            # Contact page
-├── blog/
-│   ├── building-in-public.html
-│   ├── notes-on-reading.html
-│   └── why-write.html
+├── building-in-public.html
+├── notes-on-reading.html
+├── why-write.html
 └── images/
     ├── compressed_headshot_2025.png
     ├── 2017_Søren_Solkær_-_Black_Sun_8__starling_murmurations_.jpg
@@ -31,47 +30,41 @@ your-site/
     └── 1872_Monet_-_Impression__Sunrise.jpg
 ```
 
-## ✅ What's Implemented
+What's implemented
 
-### Homepage (index.html)
-- Combined About + Home page
-- Center-aligned hero with tagline
-- Images with captions
-- Sections: My work, Other work interests, About me
-- Your headshot with download link
+Homepage (index.html): Combined About and Home page with center-aligned hero, tagline, images with captions, sections for work, interests, and personal background, headshot with download link.
 
-### Blog System
-- Blog listing page with clean layout
-- Individual post pages with:
-  - Table of contents (left sidebar)
-  - Main content (center, ~650px wide)
-  - References (right sidebar with inline citations)
-  - Comments section using Giscus
-  - Social footer
-- Three sample posts included
+Blog system: Blog listing page with clean layout, individual post pages with table of contents (left sidebar), main content (center, approximately 650px wide), references (right sidebar with inline citations), comments section using Giscus, social footer.
 
-### Other Pages
-- Publications: Portfolio grid for publication covers
-- Contact: Simple contact page with links
+Other pages: Publications as simple list format (same style as blog), Contact page with links.
 
-## 📝 How to Add a New Blog Post
+Images: All uploaded images are in the /images/ directory.
 
-### Step 1: Create the HTML File
-1. Duplicate one of the blog post files (e.g., `blog/building-in-public.html`)
-2. Rename it (e.g., `blog/my-new-post.html`)
+How to add a new blog post
 
-### Step 2: Update the Content
+Step 1: Create the HTML file
+
+Duplicate one of the blog post files (e.g., building-in-public.html) and rename it (e.g., my-new-post.html).
+
+Step 2: Update the content
+
+Update title:
 ```html
-<!-- Update title -->
 <title>Your Post Title - Renan Araujo</title>
+```
 
-<!-- Update h1 -->
+Update h1:
+```html
 <h1>Your Post Title</h1>
+```
 
-<!-- Update date -->
+Update date:
+```html
 <p class="meta">January 15, 2025</p>
+```
 
-<!-- Update table of contents -->
+Update table of contents:
+```html
 <aside class="toc-sidebar">
     <h4>Contents</h4>
     <ul>
@@ -79,19 +72,23 @@ your-site/
         <li><a href="#section2">Your Second Section</a></li>
     </ul>
 </aside>
+```
 
-<!-- Update h2 headings with matching IDs -->
+Update h2 headings with matching IDs:
+```html
 <h2 id="section1">Your First Section</h2>
 ```
 
-### Step 3: Add Inline Citations
+Step 3: Add inline citations
+
 ```html
 <p>
     Your text here with a citation.<a href="#ref1" class="citation">1</a>
 </p>
 ```
 
-### Step 4: Add References
+Step 4: Add references
+
 ```html
 <aside class="references-sidebar">
     <h4>References</h4>
@@ -102,11 +99,12 @@ your-site/
 </aside>
 ```
 
-### Step 5: Add to Blog Listing
-Update `blog.html`:
+Step 5: Add to blog listing
+
+Update blog.html:
 ```html
 <article>
-    <h3><a href="/blog/your-new-post.html">Your Post Title</a></h3>
+    <h3><a href="/your-new-post.html">Your Post Title</a></h3>
     <p class="meta">January 15, 2025</p>
     <p class="excerpt">
         Your post excerpt here...
@@ -114,10 +112,11 @@ Update `blog.html`:
 </article>
 ```
 
-### Step 6: Upload Files
-Upload both the new post file and the updated `blog.html`
+Step 6: Upload files
 
-## 💬 Setting Up Comments
+Upload both the new post file and the updated blog.html.
+
+Setting up comments
 
 The blog posts use Giscus (GitHub-based comments). To enable:
 
@@ -125,7 +124,7 @@ The blog posts use Giscus (GitHub-based comments). To enable:
 2. Enter your GitHub repository name
 3. Enable Discussions in your repo settings
 4. Configure your preferences on giscus.app
-5. Copy the generated `<script>` tag
+5. Copy the generated script tag
 6. Replace the placeholder script in each blog post
 
 Current placeholder:
@@ -137,11 +136,13 @@ Current placeholder:
 </script>
 ```
 
-## 🖼️ Adding Images
+Adding images
 
-All images are in the `/images/` directory. To add new images:
+Yes, you need to upload images to GitHub. All images should be in the /images/ directory.
 
-1. Upload image to `/images/` folder
+To add new images:
+
+1. Upload image to /images/ folder in your GitHub repository
 2. Reference in HTML:
 ```html
 <div class="hero-image">
@@ -152,24 +153,21 @@ All images are in the `/images/` directory. To add new images:
 </p>
 ```
 
-## 📚 Adding Publications
+Adding publications
 
-Update `publications.html`:
+Update publications.html:
 
 ```html
-<a href="URL_TO_PUBLICATION" class="publication-item" target="_blank">
-    <div class="publication-cover">
-        <img src="/images/cover.jpg" alt="Publication title">
-    </div>
-    <h3 class="publication-title">Your Publication Title</h3>
-    <p class="publication-meta">Journal/Venue • Year</p>
-    <p class="publication-description">
+<article>
+    <h3><a href="URL_TO_PUBLICATION" target="_blank">Your Publication Title</a></h3>
+    <p class="meta">Journal/Venue • Year</p>
+    <p class="description">
         Brief description of the publication
     </p>
-</a>
+</article>
 ```
 
-## 🎨 Customizing Colors
+Customizing colors
 
 Edit CSS variables in any HTML file:
 ```css
@@ -178,50 +176,70 @@ Edit CSS variables in any HTML file:
     --text: #21232C;         /* Body text */
     --text-light: #666;      /* Metadata */
     --caption: #B2B7CC;      /* Image captions */
-    --accent: #A47663;       /* Links, H1 */
+    --accent: #A47663;       /* Links */
 }
 ```
 
-## 🚀 Hosting on GitHub Pages
+Hosting on GitHub Pages
 
-1. Create repository: `yourusername.github.io`
+1. Create repository: yourusername.github.io
 2. Upload all files maintaining the folder structure
-3. Make sure images are in `/images/` and blog posts in `/blog/`
-4. Site will be live at `https://yourusername.github.io`
+3. Make sure images are in /images/ folder
+4. Site will be live at https://yourusername.github.io
 
-## 📋 Quick Checklist
+Using your own domain
 
-- [ ] Replace placeholder email in contact.html
-- [ ] Set up Giscus comments for blog posts
-- [ ] Add your actual publications with covers
-- [ ] Replace sample blog posts with your content
-- [ ] Update social links (already set to your profiles)
-- [ ] Upload all images to `/images/` folder
-- [ ] Test all links work
-- [ ] Deploy to GitHub Pages
+To use araujorenan.com with GitHub Pages:
 
-## 🔧 Technical Notes
+1. In your GitHub repo, go to Settings, then Pages
+2. Under "Custom domain", enter: araujorenan.com
+3. Save the settings
+4. In your domain registrar (where you bought araujorenan.com):
+   - Add a CNAME record pointing to: yourusername.github.io
+   - Or add A records pointing to GitHub's IPs: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+5. Wait for DNS to propagate (can take up to 24 hours)
+6. Enable "Enforce HTTPS" in GitHub Pages settings
 
-- Three-column layout for blog posts collapses to single column on mobile
-- References sidebar appears parallel to where citations appear in text
-- All pages use sticky navigation
-- Images automatically resize for mobile
-- Comments require GitHub account (via Giscus)
+Alternative hosting options
 
-## ❓ Common Questions
+GitHub Pages is free and works well for static sites. If you want alternatives:
 
-**Q: How do I change the navigation menu?**
-A: Edit the `<nav>` section in each HTML file's `.site-nav` div.
+Netlify: Easier interface than GitHub, drag-and-drop deployment, free tier, good for custom domains. Very simple to set up. Go to netlify.com, drag your folder, done.
 
-**Q: Can I add more pages?**
-A: Yes! Duplicate any existing page and modify the content. Add a link in the navigation.
+Vercel: Similar to Netlify, also very easy.
 
-**Q: How do I change fonts?**
-A: Update the Google Fonts link in `<head>` and the `--font-main` variable in CSS.
+Traditional web hosting: More complex setup, costs money, unnecessary for a static site.
 
-**Q: References aren't showing parallel to citations?**
-A: The references sidebar is sticky and scrolls with the page. Make sure citations use `<a href="#ref1" class="citation">1</a>` and references have matching `id="ref1"`.
+Recommendation: Start with GitHub Pages since you're already using GitHub. If you find it clunky, try Netlify (it's actually easier than GitHub Pages).
 
-## 📄 License
+Quick checklist
+
+- Replace placeholder email in contact.html
+- Set up Giscus comments for blog posts
+- Upload images to /images/ folder in GitHub
+- Add your actual publications
+- Replace sample blog posts with your content
+- Test all links work
+- Set up custom domain if desired
+
+Technical notes
+
+Three-column layout for blog posts collapses to single column on mobile.
+References sidebar appears parallel to where citations appear in text.
+All pages use sticky navigation.
+Images automatically resize for mobile.
+Comments require GitHub account (via Giscus).
+
+Common questions
+
+How do I change the navigation menu? Edit the nav section in each HTML file's .site-nav div.
+
+Can I add more pages? Yes. Duplicate any existing page and modify the content. Add a link in the navigation.
+
+How do I change fonts? Update the Google Fonts link in head and the --font-main variable in CSS.
+
+Why aren't references showing parallel to citations? The references sidebar is sticky and scrolls with the page. Make sure citations use the format shown above with matching IDs.
+
+License
 
 Free to use however you like. No attribution required.
