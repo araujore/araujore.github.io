@@ -132,12 +132,14 @@ All images should be in the /images/ directory.
 2. Reference in HTML:
 ```html
 <div class="hero-image">
-    <img src="/images/your-image.jpg" alt="Description">
+    <img src="images/your-image.jpg" alt="Description">
 </div>
 <p class="image-caption">
     <a href="https://source-url.com">Image Title</a>, Artist (Year)
 </p>
 ```
+
+Note: Use relative paths (images/file.jpg) not absolute paths (/images/file.jpg).
 
 ## Adding Publications
 
@@ -210,6 +212,12 @@ Edit CSS variables in any HTML file:
 Start with GitHub Pages since you're already using GitHub. If you find it clunky, try Netlify (it's simpler).
 
 ## Common Tasks
+
+### Changing the Site Title
+The site title "Renan Araujo" appears at the top of every page and links to the homepage. To change it, update this in each HTML file:
+```html
+<h1><a href="/">Renan Araujo</a></h1>
+```
 
 ### Changing the Navigation Menu
 Edit the nav section in each HTML file's .site-nav div.
