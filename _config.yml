@@ -1,0 +1,7 @@
+title: Renan Araujo
+description: Personal website and blog
+url: "https://araujore.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
