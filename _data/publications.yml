@@ -1,17 +1,41 @@
-- title: "Title of Your Publication"
-  url: "https://example.com/publication-1"
-  venue: "Journal Name"
+- title: "Policy Options for Preserving Chain of Thought Monitorability"
+  url: "https://www.iaps.ai/research/policy-options-for-preserving-cot-monitorability"
+  year: 2025
+  description: "Today's most advanced AI models use chain of thought (CoT) reasoning; monitoring this CoT can be valuable for controlling these systems and ensuring they behave as intended. We propose several recommendations to enhance CoT monitoring coordination. These would be low-regret to implement, regardless of the size of any monitorability tax."
+  citation: "Institute for AI Policy and Strategy. &ldquo;Policy Options for Preserving Chain of Thought Monitorability.&rdquo; IAPS Research, September 2025."
+
+- title: "Verification for International AI Governance"
+  url: "https://aigi.ox.ac.uk/publications/verification-for-international-ai-governance/"
+  year: 2025
+  description: "The growing impacts of AI are spurring states to consider international agreements. The political feasibility of such agreements can hinge on their verifiability. This report analyzes several potential international agreements and ways they could be verified, making pessimistic assumptions about the technical and political parameters of the verification challenge."
+  citation: "Oxford AI Governance Initiative. &ldquo;Verification for International AI Governance.&rdquo; University of Oxford, 2025."
+
+- title: "Looking Ahead: Synergies between the EU AI Office and UK AISI"
+  url: "https://www.oxfordmartin.ox.ac.uk/publications/looking-ahead-synergies-between-the-eu-ai-office-and-uk-aisi"
   year: 2024
-  description: "Brief description of the publication and its key contributions to the field of AI governance and policy."
+  description: "The UK AI Safety Institute and the European AI Office are the primary bodies covering security and safety of AI systems in their respective jurisdictions. Using a framework of four levels of engagement, this brief provides an overview of potential synergies and strategic alignment that can serve as a model for other regional arrangements."
+  citation: "Oxford Martin School. &ldquo;Looking Ahead: Synergies between the EU AI Office and UK AISI.&rdquo; University of Oxford, 2024."
 
-- title: "Another Publication Title"
-  url: "https://example.com/publication-2"
-  venue: "Conference Proceedings"
-  year: 2023
-  description: "Another brief description highlighting the main findings or arguments related to international AI governance."
+- title: "Who Should Develop Which AI Evaluations?"
+  url: "https://aigi.ox.ac.uk/publications/who-should-develop-which-ai-evaluations/"
+  year: 2024
+  description: "We explore frameworks and criteria for determining which actors are best suited to develop AI model evaluations. Key challenges include conflicts of interest when AI companies assess their own models and the blurred boundary between developing and conducting evaluations. We propose a taxonomy of four development approaches."
+  citation: "Oxford AI Governance Initiative. &ldquo;Who Should Develop Which AI Evaluations?&rdquo; University of Oxford, 2024."
 
-- title: "Third Publication Example"
-  url: "https://example.com/publication-3"
-  venue: "Policy Report"
-  year: 2023
-  description: "Description of this publication's contribution to AI policy discourse and governance frameworks."
+- title: "Key Questions for the International Network of AI Safety Institutes"
+  url: "https://www.iaps.ai/research/international-network-aisis"
+  year: 2024
+  description: "We explore key questions for the International Network of AI Safety Institutes and suggest ways forward. What should the network work on? How should it be structured in terms of membership and central coordination? How should it fit into the international governance landscape?"
+  citation: "Institute for AI Policy and Strategy. &ldquo;Key Questions for the International Network of AI Safety Institutes.&rdquo; IAPS Commentary, November 2024."
+
+- title: "Understanding the First Wave of AI Safety Institutes"
+  url: "https://www.iaps.ai/research/understanding-aisis"
+  year: 2024
+  description: "AI Safety Institutes (AISIs) are a new institutional model for AI governance that has expanded across the globe. In this primer, we analyze the first wave of AISIs: the shared fundamental characteristics and functions of the institutions established by the UK, the US, and Japan."
+  citation: "Institute for AI Policy and Strategy. &ldquo;Understanding the First Wave of AI Safety Institutes.&rdquo; IAPS Primer, 2024."
+
+- title: "The Future of International Scientific Assessments of AI's Risks"
+  url: "https://aigi.ox.ac.uk/publications/the-future-of-international-scientific-assessments-of-ais-risks/"
+  year: 2024
+  description: "Effective international coordination to address AI&rsquo;s global impacts demands a shared, scientifically rigorous understanding of AI risks. This paper examines the challenges in establishing international scientific consensus, analyzes current efforts, and proposes a two-track approach combining a UN-led process with an independent annual report on advanced AI risks."
+  citation: "Oxford AI Governance Initiative. &ldquo;The Future of International Scientific Assessments of AI&rsquo;s Risks.&rdquo; University of Oxford, 2024."
