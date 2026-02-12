@@ -1,0 +1,12 @@
+<div class="site-nav">
+    <h1><a href="/">{{ site.title }}</a></h1>
+    <nav>
+        {% for nav_item in site.navigation %}
+            {% if page.url == nav_item.url or (nav_item.url == '/blog' and page.url contains '/blog') or (nav_item.url == '/blog' and page.layout == 'post') %}
+                <a href="{{ nav_item.url }}" class="active">{{ nav_item.title }}</a>
+            {% else %}
+                <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+            {% endif %}
+        {% endfor %}
+    </nav>
+</div>

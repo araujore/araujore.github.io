@@ -1,11 +1,84 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+    {% include header.html %}
 
-<article>
-      <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%B %d, %Y" }}</p>p>
-    
-    {{ content }}
-</article></h1>
-</article>
+    <div class="page-wrapper">
+        <!-- Left Sidebar: Table of Contents -->
+        <aside class="toc-sidebar">
+            <h4>Contents</h4>
+            <ul>
+                {% for toc_item in page.toc %}
+                    <li><a href="#{{ toc_item.id }}">{{ toc_item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="article-header">
+                <h1>{{ page.title }}</h1>
+                <p class="meta">{{ page.date | date: "%B %d, %Y" }}</p>
+            </header>
+
+            <article>
+                {{ content }}
+            </article>
+
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <h2>Comments</h2>
+                <script src="https://giscus.app/client.js"
+                        data-repo="YOUR-GITHUB-USERNAME/YOUR-REPO-NAME"
+                        data-repo-id="YOUR-REPO-ID"
+                        data-category="General"
+                        data-category-id="YOUR-CATEGORY-ID"
+                        data-mapping="pathname"
+                        data-strict="0"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="0"
+                        data-input-position="top"
+                        data-theme="light"
+                        data-lang="en"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </div>
+
+            <footer class="article-footer">
+                <div class="social-icons">
+                    <a href="{{ site.social.linkedin }}" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="{{ site.social.twitter }}" target="_blank" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="footer-text">
+                    2025 · {{ site.title }} · <a href="/contact">Contact</a>
+                </div>
+            </footer>
+        </main>
+
+        <!-- Right Sidebar: References -->
+        <aside class="references-sidebar">
+            <h4>References</h4>
+            {% for ref in page.references %}
+                <div class="reference-item" id="ref{{ ref.number }}">
+                    <span class="reference-number">{{ ref.number }}</span>
+                    {% if ref.url %}
+                        <a href="{{ ref.url }}" target="_blank">{{ ref.text }}</a>
+                    {% else %}
+                        {{ ref.text }}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </aside>
+    </div>
+</body>
+</html>

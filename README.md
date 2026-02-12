@@ -1,242 +1,307 @@
-# Personal Website User Manual
+# Renan Araujo Jekyll Site
 
-## Design Specifications
+A clean, minimalist Jekyll site for personal branding, writing, and research publication.
 
-- Background: #F5F5F5 (light gray)
-- Font: Lusitana from Google Fonts
-- Body text: 11pt, #21232C
-- H1: 22pt, bold, #21232C
-- H2: 18pt, bold, #21232C
-- H3: 14pt, italic, #21232C
-- Links: #A47663, underlined (except in navigation)
-
-## File Structure
+## File Structure Overview
 
 ```
-your-site/
-├── index.html              # About/Home page
-├── blog.html               # Blog listing page
-├── publications.html       # Publications list
-├── contact.html            # Contact page
-├── building-in-public.html # Sample blog post
-├── notes-on-reading.html   # Sample blog post
-├── why-write.html          # Sample blog post
-└── images/
-    ├── headshot.jpg
-    ├── soren.jpg
-    ├── endeavour.jpg
-    └── monet.jpg
+jekyll-site/
+├── _config.yml                 # Site configuration and metadata
+├── _includes/                  # Reusable template components
+│   ├── head.html              # Head section with all CSS
+│   ├── header.html            # Navigation header
+│   └── footer.html            # Social links and footer
+├── _layouts/                  # Page layout templates
+│   ├── default.html           # Base layout for pages
+│   ├── page.html              # Layout for static pages
+│   └── post.html              # Layout for blog posts (three-column)
+├── _posts/                    # Blog posts in Markdown
+│   ├── 2024-12-20-building-in-public.md
+│   ├── 2024-12-10-notes-on-reading.md
+│   └── 2024-11-28-why-write.md
+├── _data/                     # Data files
+│   └── publications.yml       # Publications listing
+├── assets/                    # Static assets
+│   └── images/               # Image files
+├── index.md                   # Home/About page
+├── blog.md                    # Blog listing page
+├── publications.md            # Publications page
+├── contact.md                 # Contact page
+└── README.md                  # This file
 ```
 
-## Adding a New Blog Post
+## Getting Started
 
-### Create the HTML File
+### Prerequisites
 
-Duplicate one of the blog post files (e.g., building-in-public.html) and rename it (e.g., my-new-post.html).
+- Ruby 2.7 or higher
+- Bundler
+- Jekyll
 
-### Update the Content
+### Installation
 
-Update title:
-```html
-<title>Your Post Title - Renan Araujo</title>
+1. Navigate to the site directory:
+   ```
+   cd jekyll-site
+   ```
+
+2. Create a Gemfile if one doesn't exist:
+   ```
+   bundle init
+   ```
+
+3. Add Jekyll to your Gemfile:
+   ```
+   bundle add jekyll
+   ```
+
+4. Install dependencies:
+   ```
+   bundle install
+   ```
+
+5. Serve the site locally:
+   ```
+   bundle exec jekyll serve
+   ```
+
+6. Open your browser to http://localhost:4000
+
+## Site Configuration
+
+Edit `_config.yml` to customize:
+- Site title and description
+- Base URL (important for GitHub Pages subdirectories)
+- Navigation menu items
+- Social media links (LinkedIn, Twitter)
+
+Example:
+```yaml
+title: Renan Araujo
+description: Personal website and blog
+url: "https://araujore.github.io"
+baseurl: ""
 ```
 
-Update h1:
-```html
-<h1>Your Post Title</h1>
+## How to Add a New Blog Post
+
+1. Create a new file in the `_posts/` directory with the naming convention: `YYYY-MM-DD-post-title.md`
+
+2. Add front matter at the top of the file:
+```markdown
+---
+layout: post
+title: Your Post Title
+date: 2024-02-11
+excerpt: A brief excerpt that shows on the blog listing page.
+toc:
+  - id: section-id
+    title: Section Title
+  - id: another-section
+    title: Another Section
+references:
+  - number: 1
+    text: "Author Name (Year). Reference Title"
+    url: "https://example.com"
+  - number: 2
+    text: "Another Reference"
+---
 ```
 
-Update date:
-```html
-<p class="meta">January 15, 2025</p>
+3. Write your content in Markdown after the front matter.
+
+4. Use heading anchors in your content: `## Section Title {#section-id}`
+
+5. Add inline citations with: `<a href="#ref1" class="citation">1</a>`
+
+The blog post will automatically appear on the /blog/ page and can be linked as `/blog/your-post-title/`.
+
+### Front Matter Fields
+
+- `layout: post` - Required for blog posts
+- `title` - Post title (shows in page and listings)
+- `date` - Publication date (YYYY-MM-DD format)
+- `excerpt` - Short summary for blog listing (max 1-2 sentences)
+- `toc` - Table of contents array with `id` and `title` for each section
+- `references` - References array with `number`, `text`, and optional `url`
+
+## How to Add a New Publication
+
+1. Edit `_data/publications.yml`
+
+2. Add a new publication entry:
+```yaml
+- title: "Publication Title"
+  url: "https://link-to-publication.com"
+  venue: "Journal Name, Conference, or Publisher"
+  year: 2024
+  description: "Brief description of the publication and its key contributions."
 ```
 
-Update table of contents:
-```html
-<aside class="toc-sidebar">
-    <h4>Contents</h4>
-    <ul>
-        <li><a href="#section1">Your First Section</a></li>
-        <li><a href="#section2">Your Second Section</a></li>
-    </ul>
-</aside>
+The Publications page will automatically include the new entry, sorted by year.
+
+## How to Edit Page Content
+
+Static pages (About, Contact, Publications) are simple Markdown files:
+
+- **index.md** - About/Home page. Edit the hero section and content blocks.
+- **contact.md** - Contact page. Modify the contact information and links.
+- **publications.md** - Auto-generates from `_data/publications.yml`
+- **blog.md** - Auto-generates the blog listing
+
+To edit a page, open the corresponding `.md` file and modify the content after the front matter.
+
+## How to Change Site Settings
+
+Edit `_config.yml` at the root of the site:
+
+```yaml
+title: Your Site Title                    # Main site name
+description: Your description             # Meta description
+url: "https://yourdomain.com"            # Full site URL
+baseurl: ""                              # Leave empty unless using subdirectory
+permalink: /blog/:title/                 # URL pattern for blog posts
+navigation:                              # Main navigation links
+  - title: About
+    url: /
+  - title: Publications
+    url: /publications
+social:
+  linkedin: https://www.linkedin.com/in/yourprofile/
+  twitter: https://twitter.com/yourhandle
 ```
 
-Update h2 headings with matching IDs:
-```html
-<h2 id="section1">Your First Section</h2>
+### Color Customization
+
+Colors are defined as CSS variables in `_includes/head.html`. To change them:
+
+1. Open `_includes/head.html`
+2. Find the `:root` section near the top of the `<style>` tag
+3. Modify the color values:
+   ```css
+   :root {
+       --bg: #F5F5F5;           /* Background color */
+       --text: #21232C;         /* Main text color */
+       --text-light: #666;      /* Secondary text */
+       --accent: #A47663;       /* Links and accents */
+       --border: #e0e0e0;       /* Border color */
+       --caption: #B2B7CC;      /* Caption text */
+   }
+   ```
+
+### Font Customization
+
+The site uses "Lusitana" from Google Fonts. To change:
+
+1. Open `_includes/head.html`
+2. Replace the Google Fonts link with your preferred font
+3. Update the `--font-main` variable in the `:root` section
+
+## How to Set Up Custom Domain
+
+If you're using GitHub Pages:
+
+1. Create a `CNAME` file at the root of your repository with your domain name:
+   ```
+   yourdomain.com
+   ```
+
+2. Configure your domain registrar to point to GitHub Pages (see GitHub Pages documentation)
+
+3. In your repository settings, enable HTTPS
+
+## Image Usage
+
+Images are stored in `assets/images/`. To include an image:
+
+```markdown
+![Alt text]({{ site.baseurl }}/images/filename)
 ```
 
-### Add Inline Citations
-
-```html
-<p>
-    Your text here with a citation.<a href="#ref1" class="citation">1</a>
-</p>
+For example:
+```markdown
+![Headshot]({{ site.baseurl }}/images/compressed_headshot_2025.jpg)
 ```
 
-### Add References
+Note: Some images in the source don't have extensions (like `soren`, `endeavour`, `monet`). Reference them without extensions.
 
-```html
-<aside class="references-sidebar">
-    <h4>References</h4>
-    <div class="reference-item" id="ref1">
-        <span class="reference-number">1</span>
-        Author. (Year). <a href="URL" target="_blank">Title</a>
-    </div>
-</aside>
-```
+## Blog Post Structure
 
-### Add to Blog Listing
+Blog posts use a three-column layout:
 
-Update blog.html:
-```html
-<article>
-    <h3><a href="/your-new-post.html">Your Post Title</a></h3>
-    <p class="meta">January 15, 2025</p>
-    <p class="excerpt">
-        Your post excerpt here...
-    </p>
-</article>
-```
+- **Left sidebar**: Auto-generated table of contents from headings
+- **Center**: Article content with title, date, and body
+- **Right sidebar**: References section
 
-### Upload Files
+This layout is responsive and stacks vertically on screens smaller than 1200px.
 
-Upload both the new post file and the updated blog.html.
+## Comments
 
-## Setting Up Comments
-
-The blog posts use Giscus (GitHub-based comments).
+Blog posts can include a Giscus comments section. To enable:
 
 1. Go to https://giscus.app/
-2. Enter your GitHub repository name
-3. Enable Discussions in your repo settings
-4. Configure your preferences on giscus.app
-5. Copy the generated script tag
-6. Replace the placeholder script in each blog post
+2. Enter your GitHub repository details
+3. Copy the generated script configuration
+4. Edit `_layouts/post.html` and replace the script attributes in the Comments section
 
-Current placeholder in blog posts:
-```html
-<script src="https://giscus.app/client.js"
-        data-repo="YOUR-GITHUB-USERNAME/YOUR-REPO-NAME"
-        data-repo-id="YOUR-REPO-ID"
-        ...
-</script>
+## Building for Deployment
+
+To build the site for production:
+
+```bash
+bundle exec jekyll build
 ```
 
-## Adding Images
+This generates a `_site/` folder with the static site. For GitHub Pages, this happens automatically when you push to your repository.
 
-All images should be in the /images/ directory.
+## Deployment to GitHub Pages
 
-1. Upload image to /images/ folder in your GitHub repository
-2. Reference in HTML:
-```html
-<div class="hero-image">
-    <img src="images/your-image.jpg" alt="Description">
-</div>
-<p class="image-caption">
-    <a href="https://source-url.com">Image Title</a>, Artist (Year)
-</p>
-```
+1. Create a GitHub repository named `yourusername.github.io`
 
-Note: Use relative paths (images/file.jpg) not absolute paths (/images/file.jpg).
+2. Push your Jekyll site to the repository:
+   ```bash
+   git add .
+   git commit -m "Initial Jekyll site"
+   git push origin main
+   ```
 
-## Adding Publications
+3. GitHub will automatically build and deploy your site at `https://yourusername.github.io`
 
-Update publications.html:
+4. To use a custom domain, add a `CNAME` file (see "Custom Domain" section above)
 
-```html
-<article>
-    <h3><a href="URL_TO_PUBLICATION" target="_blank">Your Publication Title</a></h3>
-    <p class="meta">Journal/Venue • Year</p>
-    <p class="description">
-        Brief description of the publication
-    </p>
-</article>
-```
+## Styling and Layout
 
-## Customizing Colors
+The site uses a single CSS file in `_includes/head.html`. Key design features:
 
-Edit CSS variables in any HTML file:
-```css
-:root {
-    --bg: #F5F5F5;           /* Background */
-    --text: #21232C;         /* Body text */
-    --text-light: #666;      /* Metadata */
-    --caption: #B2B7CC;      /* Image captions */
-    --accent: #A47663;       /* Links */
-}
-```
+- Responsive design (desktop, tablet, mobile)
+- Sticky navigation header
+- Fade-in animations on page load
+- Three-column post layout (desktop) that stacks on mobile
+- Max-width containers for readability
 
-## Hosting on GitHub Pages
+To modify layouts or styling, edit the appropriate section in `_includes/head.html` or the relevant layout file.
 
-1. Create repository named: yourusername.github.io
-2. Upload all files maintaining the folder structure
-3. Make sure images are in /images/ folder
-4. Site will be live at https://yourusername.github.io
+## Troubleshooting
 
-## Using Your Own Domain
+### Posts not showing up
 
-### With GitHub Pages
+- Ensure the filename follows the format: `YYYY-MM-DD-title.md`
+- Check that the front matter is valid YAML
+- Run `bundle exec jekyll build` to see error messages
 
-1. In your GitHub repo, go to Settings, then Pages
-2. Under "Custom domain", enter: araujorenan.com
-3. Save the settings
-4. In your domain registrar (where you bought araujorenan.com):
-   - Add a CNAME record pointing to: yourusername.github.io
-   - Or add A records pointing to: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
-5. Wait for DNS to propagate (can take up to 24 hours)
-6. Enable "Enforce HTTPS" in GitHub Pages settings
+### Images not loading
 
-### With Netlify (Alternative)
+- Verify the image file exists in `assets/images/`
+- Use relative paths: `{{ site.baseurl }}/images/filename`
+- Check that filenames match exactly (case-sensitive)
 
-1. Go to netlify.com
-2. Drag and drop your site folder
-3. Click "Add custom domain"
-4. Follow their instructions for DNS settings
-5. Done
+### Navigation not highlighting active page
 
-## Alternative Hosting Options
+- Navigation active states are handled by `_includes/header.html`
+- The active class is set based on the current page URL
 
-### Netlify
-- Easier interface than GitHub
-- Drag-and-drop deployment
-- Free tier available
-- Simple custom domain setup
+### Styles not loading
 
-### Vercel
-- Similar to Netlify
-- Also very easy to use
-
-### Recommendation
-Start with GitHub Pages since you're already using GitHub. If you find it clunky, try Netlify (it's simpler).
-
-## Common Tasks
-
-### Changing the Site Title
-The site title "Renan Araujo" appears at the top of every page and links to the homepage. To change it, update this in each HTML file:
-```html
-<h1><a href="/">Renan Araujo</a></h1>
-```
-
-### Changing the Navigation Menu
-Edit the nav section in each HTML file's .site-nav div.
-
-### Adding More Pages
-Duplicate any existing page, modify the content, and add a link in the navigation.
-
-### Changing Fonts
-Update the Google Fonts link in head and the --font-main variable in CSS.
-
-### Troubleshooting References
-The references sidebar is sticky and scrolls with the page. Make sure citations use `<a href="#ref1" class="citation">1</a>` and references have matching `id="ref1"`.
-
-## Quick Setup Checklist
-
-1. Replace placeholder email in contact.html
-2. Set up Giscus comments for blog posts
-3. Upload images to /images/ folder in GitHub
-4. Add your actual publications
-5. Replace sample blog posts with your content
-6. Test all links work
-7. Set up custom domain if desired
+- Ensure you're viewing the live site, not a cached version
+- Clear browser cache (Ctrl+Shift+Delete or Cmd+Shift+Delete)
+- Check that `_includes/head.html` is in the correct location

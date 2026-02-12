@@ -2,6 +2,21 @@ title: Renan Araujo
 description: Personal website and blog
 url: "https://araujore.github.io"
 baseurl: ""
-
-# Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  toc_levels: "2..3"
+permalink: /blog/:title/
+navigation:
+  - title: About
+    url: /
+  - title: Publications
+    url: /publications
+  - title: Blog
+    url: /blog
+  - title: Contact
+    url: /contact
+social:
+  linkedin: https://www.linkedin.com/in/araujonrenan/
+  twitter: https://twitter.com/araujonrenan

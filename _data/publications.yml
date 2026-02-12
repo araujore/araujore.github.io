@@ -1,0 +1,17 @@
+- title: "Title of Your Publication"
+  url: "https://example.com/publication-1"
+  venue: "Journal Name"
+  year: 2024
+  description: "Brief description of the publication and its key contributions to the field of AI governance and policy."
+
+- title: "Another Publication Title"
+  url: "https://example.com/publication-2"
+  venue: "Conference Proceedings"
+  year: 2023
+  description: "Another brief description highlighting the main findings or arguments related to international AI governance."
+
+- title: "Third Publication Example"
+  url: "https://example.com/publication-3"
+  venue: "Policy Report"
+  year: 2023
+  description: "Description of this publication's contribution to AI policy discourse and governance frameworks."
