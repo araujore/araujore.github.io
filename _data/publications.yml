@@ -2,40 +2,40 @@
   url: "https://www.iaps.ai/research/policy-options-for-preserving-cot-monitorability"
   year: 2025
   description: "Today's most advanced AI models use chain of thought (CoT) reasoning; monitoring this CoT can be valuable for controlling these systems and ensuring they behave as intended. We propose several recommendations to enhance CoT monitoring coordination. These would be low-regret to implement, regardless of the size of any monitorability tax."
-  citation: "Institute for AI Policy and Strategy. &ldquo;Policy Options for Preserving Chain of Thought Monitorability.&rdquo; IAPS Research, September 2025."
+  citation: "Delaney, Oscar, Oliver Guest, and Renan Araujo. 2025. <em>Policy Options for Preserving Chain of Thought Monitorability.</em> Institute for AI Policy and Strategy."
 
 - title: "Verification for International AI Governance"
   url: "https://aigi.ox.ac.uk/publications/verification-for-international-ai-governance/"
   year: 2025
   description: "The growing impacts of AI are spurring states to consider international agreements. The political feasibility of such agreements can hinge on their verifiability. This report analyzes several potential international agreements and ways they could be verified, making pessimistic assumptions about the technical and political parameters of the verification challenge."
-  citation: "Oxford AI Governance Initiative. &ldquo;Verification for International AI Governance.&rdquo; University of Oxford, 2025."
+  citation: "Harack, Ben, Robert Trager, Anka Reuel, et al. 2025. <em>Verification for International AI Governance.</em> Oxford Martin AI Governance Initiative."
 
 - title: "Looking Ahead: Synergies between the EU AI Office and UK AISI"
-  url: "https://www.oxfordmartin.ox.ac.uk/publications/looking-ahead-synergies-between-the-eu-ai-office-and-uk-aisi"
-  year: 2024
+  url: "https://aigi.ox.ac.uk/publications/looking-ahead-synergies-between-the-eu-ai-office-uk-aisi/"
+  year: 2025
   description: "The UK AI Safety Institute and the European AI Office are the primary bodies covering security and safety of AI systems in their respective jurisdictions. Using a framework of four levels of engagement, this brief provides an overview of potential synergies and strategic alignment that can serve as a model for other regional arrangements."
-  citation: "Oxford Martin School. &ldquo;Looking Ahead: Synergies between the EU AI Office and UK AISI.&rdquo; University of Oxford, 2024."
+  citation: "Thurnherr, Lara, Risto Uuk, Tekla Emborg, et al. 2025. <em>Looking Ahead: Synergies between the EU AI Office and UK AISI.</em> Oxford Martin AI Governance Initiative."
 
 - title: "Who Should Develop Which AI Evaluations?"
-  url: "https://aigi.ox.ac.uk/publications/who-should-develop-which-ai-evaluations/"
-  year: 2024
+  url: "https://www.oxfordmartin.ox.ac.uk/publications/who-should-develop-which-ai-evaluations"
+  year: 2025
   description: "We explore frameworks and criteria for determining which actors are best suited to develop AI model evaluations. Key challenges include conflicts of interest when AI companies assess their own models and the blurred boundary between developing and conducting evaluations. We propose a taxonomy of four development approaches."
-  citation: "Oxford AI Governance Initiative. &ldquo;Who Should Develop Which AI Evaluations?&rdquo; University of Oxford, 2024."
+  citation: "Thurnherr, Lara, Robert Trager, Amin Oueslati, et al. 2025. <em>Who Should Develop Which AI Evaluations?</em> Oxford Martin AI Governance Initiative."
 
 - title: "Key Questions for the International Network of AI Safety Institutes"
   url: "https://www.iaps.ai/research/international-network-aisis"
   year: 2024
   description: "We explore key questions for the International Network of AI Safety Institutes and suggest ways forward. What should the network work on? How should it be structured in terms of membership and central coordination? How should it fit into the international governance landscape?"
-  citation: "Institute for AI Policy and Strategy. &ldquo;Key Questions for the International Network of AI Safety Institutes.&rdquo; IAPS Commentary, November 2024."
+  citation: "Nur Adan, Sumaya, Oliver Guest, and Renan Araujo. 2024. &ldquo;Key Questions for the International Network of AI Safety Institutes.&rdquo; Institute for AI Policy and Strategy, November 9."
 
 - title: "Understanding the First Wave of AI Safety Institutes"
-  url: "https://www.iaps.ai/research/understanding-aisis"
+  url: "https://doi.org/10.48550/arXiv.2410.09219"
   year: 2024
   description: "AI Safety Institutes (AISIs) are a new institutional model for AI governance that has expanded across the globe. In this primer, we analyze the first wave of AISIs: the shared fundamental characteristics and functions of the institutions established by the UK, the US, and Japan."
-  citation: "Institute for AI Policy and Strategy. &ldquo;Understanding the First Wave of AI Safety Institutes.&rdquo; IAPS Primer, 2024."
+  citation: "Araujo, Renan, Kristina Fort, and Oliver Guest. 2024. &ldquo;Understanding the First Wave of AI Safety Institutes: Characteristics, Functions, and Challenges.&rdquo; arXiv:2410.09219. Preprint, arXiv, October 11."
 
 - title: "The Future of International Scientific Assessments of AI's Risks"
-  url: "https://aigi.ox.ac.uk/publications/the-future-of-international-scientific-assessments-of-ais-risks/"
+  url: "https://carnegieendowment.org/research/2024/08/the-future-of-international-scientific-assessments-of-ais-risks?lang=en"
   year: 2024
   description: "Effective international coordination to address AI&rsquo;s global impacts demands a shared, scientifically rigorous understanding of AI risks. This paper examines the challenges in establishing international scientific consensus, analyzes current efforts, and proposes a two-track approach combining a UN-led process with an independent annual report on advanced AI risks."
-  citation: "Oxford AI Governance Initiative. &ldquo;The Future of International Scientific Assessments of AI&rsquo;s Risks.&rdquo; University of Oxford, 2024."
+  citation: "Pouget, Hadrien, Claire Dennis, Jon Bateman, et al. 2024. <em>The Future of International Scientific Assessments of AI&rsquo;s Risks.</em> Oxford Martin AI Governance Initiative."

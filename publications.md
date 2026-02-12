@@ -13,7 +13,10 @@ permalink: /publications/
     <ul class="pub-list">
         {% for pub in site.data.publications %}
             <li>
-                <a href="#" class="pub-title" data-index="{{ forloop.index0 }}" onclick="openPanel({{ forloop.index0 }}); return false;">{{ pub.title }}</a>
+                <div class="pub-info">
+                    <a href="#" class="pub-title" data-index="{{ forloop.index0 }}" onclick="openPanel({{ forloop.index0 }}); return false;">{{ pub.title }}</a>
+                    <p class="pub-cite-inline">{{ pub.citation }}</p>
+                </div>
                 <span class="pub-year">{{ pub.year }}</span>
             </li>
         {% endfor %}
