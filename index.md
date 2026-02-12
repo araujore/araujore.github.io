@@ -20,7 +20,7 @@ page_class: home
 <section>
     <p style="text-align: center; font-weight: 700; font-size: 22pt; margin-bottom: 32px; letter-spacing: -0.02em;">My work</p>
     <p>
-        I'm Director of Programs at the <a href="https://www.iaps.ai">Institute for AI Policy and Strategy</a> (IAPS). I also work closely with the <a href="https://www.governance.ai">Oxford Martin AI Governance Initiative</a>, as a research affiliate, and the <a href="https://www.oxfordchinapolicylab.org">Oxford China Policy Lab</a>, as a fellow. I'm a lawyer with experience in comparative policy and emergent technologies.
+        I'm Director of Programs at the <a href="https://www.iaps.ai">Institute for AI Policy and Strategy</a> (IAPS). I also work closely with the <a href="https://aigi.ox.ac.uk/">Oxford Martin AI Governance Initiative</a>, as a research affiliate, and the <a href="https://www.oxfordchinapolicylab.org">Oxford China Policy Lab</a>, as a fellow. I'm a lawyer with experience in comparative policy and emergent technologies.
     </p>
 
     <p>
@@ -28,11 +28,11 @@ page_class: home
     </p>
 
     <p>
-        <strong>People and teams:</strong> Managing people and getting teams off the ground are a core part of my work. I manage researchers and fellows at IAPS, am an advisor and board member of <a href="https://forum.effectivealtruism.org/posts/hJKuNhr8YzPcKEFvc/ai-safety-organizations">several nonprofits</a> in the AI policy space, and mentor aspiring AI policy professionals in <a href="https://www.bluedot.org">various</a> <a href="https://www.condorinitiative.org">programs</a>.
+        <strong>People and teams:</strong> Managing people and getting teams off the ground are a core part of my work. I manage researchers and fellows at IAPS, am an advisor and board member of <a href="https://www.vistainstituteai.org/">several</a> <a href="https://www.condorinitiative.org/">nonprofits</a> in the AI policy space, and mentor aspiring AI policy professionals in <a href="https://www.pivotal-research.org/">various</a> <a href="https://www.magnifymentoring.org/">programs</a>.
     </p>
 
     <p>
-        <strong>Research:</strong> My <a href="https://scholar.google.com/citations?user=EXAMPLE">research interests</a> include emerging governmental institutions handling advanced AI, the implications of stronger state involvement in developing AGI, and Sino-western relations on AI.
+        <strong>Research:</strong> My <a href="https://www.iaps.ai/research?tag=International+governance+%26+China">research interests</a> include emerging governmental institutions handling advanced AI, the implications of stronger state involvement in developing AGI, and Sino-western relations on AI.
     </p>
 
     <div class="headshot-container">
