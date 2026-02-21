@@ -15,6 +15,7 @@ navigation:
     url: /publications
   - title: Blog
     url: /blog
+    hidden: true
   - title: Contact
     url: /contact
 social:
