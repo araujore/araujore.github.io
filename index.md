@@ -51,7 +51,7 @@ page_class: home
     </p>
 
     <p>
-        <strong>Governing emergent technologies:</strong> Besides AI, I've worked on the governance of fields such as bio, nuclear, and space technology. At <a href="https://rethinkpriorities.org">Rethink Priorities</a>, I ran an incubator of nonprofits reducing global risks (of which the Vista Institute and Condor came out). At the <a href="https://www.law.ox.ac.uk/research-subject-groups/institute-ethics-law-and-armed-conflict">Institute for Law and AI</a>, I analyzed all <a href="https://constitutions.app">constitutions</a> ever written on their protection of future generations, and legal mechanisms to improve <a href="https://www.spacelaw.ox.ac.uk">space governance</a>.
+        <strong>Governing emergent technologies:</strong> Besides AI, I've worked on the governance of fields such as bio, nuclear, and space technology. At <a href="https://rethinkpriorities.org">Rethink Priorities</a>, I ran an incubator of nonprofits reducing global risks (of which the Vista Institute and Condor came out). At the <a href="https://law-ai.org">Institute for Law and AI</a>, I analyzed all <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3933683">constitutions</a> ever written on their protection of future generations, and legal mechanisms to improve <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3931256">space governance</a>.
     </p>
 
     <div class="hero-image" style="margin-top: 40px;">
@@ -66,11 +66,11 @@ page_class: home
     <p style="text-align: center; font-weight: 700; font-size: 22pt; margin-bottom: 32px; letter-spacing: -0.02em;">About me</p>
 
     <p>
-        <strong>My previous life as a lawyer:</strong> I'm a lawyer by training with a master's degree from the London School of Economics in criminology. I worked for five years as chief of staff of Justices of Appeal at the Pernambuco State Court – that was during and a bit after law school, and I was the youngest chief of staff at the court then. During that time, I also co-led a <a href="https://example.com">group</a> of 50 students and lawyers providing free legal counseling for inmates in Brazil.
+        <strong>My previous life as a lawyer:</strong> I'm a lawyer by training with a master's degree from the London School of Economics in criminology. I worked for five years as chief of staff of Justices of Appeal at the Pernambuco State Court – that was during and a bit after law school, and I was the youngest chief of staff at the court then. During that time, I also co-led a <a href="https://www.instagram.com/grupoalemdasgrades/?hl=en">group</a> of 50 students and lawyers providing free legal counseling for inmates in Brazil.
     </p>
 
     <p>
-        <strong>Personal:</strong> I live in east London, UK. Outside work, I love volunteering (from animal welfare to human rights, but more recently mostly advising nonprofits on AI policy), traveling (before moving to the UK, my wife and I were "digital nomads" for two years, living in places ranging from Buenos Aires and Lisbon to Bangkok and Tokyo), have been training endurance sports (currently aiming for a half Ironman), deeply enjoy visual arts and music, and love hunting for second-hand books. I hail from Recife, in <a href="https://en.wikipedia.org/wiki/Northeast_Region,_Brazil">northeastern Brazil</a> – the best region of the country, if you want the opinion of an impartial observer.
+        <strong>Personal:</strong> I live in east London, UK. Outside work, I love volunteering (from animal welfare to human rights, but more recently mostly advising nonprofits on AI policy), traveling (before moving to the UK, my wife and I were "digital nomads" for two years, living in places ranging from Buenos Aires and Lisbon to Bangkok and Tokyo), have been training endurance sports (currently aiming for a half Ironman), deeply enjoy visual arts and music, and love hunting for second-hand books. I hail from Recife, in <a href="https://web.archive.org/web/20240213072350/https://www.nytimes.com/2019/12/26/travel/what-to-do-36-hours-in-recife.html">northeastern Brazil</a> – the best region of the country, if you want the opinion of an impartial observer.
     </p>
 
     <div class="hero-image" style="margin-top: 40px;">
