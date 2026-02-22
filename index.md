@@ -58,7 +58,7 @@ page_class: home
         <img src="images/endeavour" alt="Launch of the Endeavour shuttle">
     </div>
     <p class="image-caption">
-        <a href="https://www.nasa.gov/mission_pages/shuttle/shuttlemissions/sts134/index.html">Launch of the Endeavour shuttle</a>, NASA (2011)
+        <a href="https://apod.nasa.gov/apod/ap110525.html">Launch of the Endeavour shuttle</a>, NASA (2011)
     </p>
 </section>
 
@@ -77,6 +77,6 @@ page_class: home
         <img src="images/monet" alt="Impression, Sunrise by Monet">
     </div>
     <p class="image-caption">
-        Impression, Sunrise, Monet (1872)
+        <a href="https://en.wikipedia.org/wiki/Impression,_Sunrise">Impression, Sunrise</a>, Monet (1872)
     </p>
 </section>
