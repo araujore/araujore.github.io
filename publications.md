@@ -35,7 +35,7 @@ permalink: /publications/
         <strong>Citation</strong>
         <p class="pub-citation" id="panelCitation"></p>
     </div>
-    <a class="pub-link" id="panelLink" href="#" target="_blank">Read publication &rarr;</a>
+    <a class="pub-link" id="panelLink" href="#" target="_blank">Read &rarr;</a>
 </div>
 
 <script>
